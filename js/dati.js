@@ -1,98 +1,67 @@
-// load the data
-d3.json("data/graph.json", function(data) {
+let alfa;
+function app (){
+var i=0;
+var dispatch = d3.dispatch("changeYear");
+function me (selection){
+    console.log('selection');
+
+    d3.json("data/graph.json", function(data) {
     console.log(data);
     d3.json("data/graph1.json", function(data1) {
         console.log(data1);
-        var expenses=data1;
-
         var cf	=	crossfilter(data1);
         var gate = cf.dimension(function(d){return d.gatename});
-        gate.filter("entrance3");
-        console.log("num reports (entrance3)",cf.groupAll().reduceCount().value());
-
-        //	select VesselType,	count(*)	from	migrants group	by	VesselType
         var countgate = gate.group().reduceCount();
         console.log(countgate.all());
-        var alfa = countgate.all();
-
-        /*    var conta = d3.nest()
-                .key(function(d) { return d.gatename; })
-                .rollup(function(v)	{ return d3.mean(v,
-                    function(d)	{ return d.carid; });})
-                .entries(expenses);
-            console.log(conta);})*/
-/*    var circles = svg.append("g").selectAll("circle")
-        .data(data.nodes)
-        .enter()
-        .append("circle");
-    var circleAttributes = circles
-        .attr("cx", function (d) { return d.xpos; })
-        .attr("cy", (function (d) { return d.ypos; }))
-        .attr("r", 2)
-        .style("fill", (function (d) { return d.color; }));
-*/
-
-    var link = svg.append("g")
-        .attr("class", "links")
-        .selectAll("line")
-        .data(data.links)
-        .enter().append('line')
-        .attr('stroke-width', 0.2)
-        .attr('stroke', '#E5E5E5');
-
-
-    var node = svg.append("g")
-        .attr("class", "nodes")
-        .selectAll("circle")
-        .data(data.nodes)
-        .enter().append("circle")
-        .attr("fill", function(d) { return (d.color); })
-
-    // set scale for node size
-    var nodeSizeRange = [2, 7];
-    var minmax = d3.extent(alfa, function(d) { return d.value });
-    var nodeScale = d3.scaleLinear()
-        .range(nodeSizeRange)
-        .domain(minmax);
-    console.log(d3.merge([data.nodes, alfa]));
-
-    var simulation = d3.forceSimulation()
-        .force("link", d3.forceLink().id(function(d) {return d.key;}))
-      //  .force("x", d3.forceX())
-       // .force("y", d3.forceY())
-
-    node.append("title")
-        .text(function(d) { return d.key; });
-    // add nodes and links to simulation
-    simulation
-        .nodes(data.nodes)
-        .on("tick", ticked);
-
-    simulation
-        .force("link")
-        .links(data.links);
-
-
-
-    function ticked() {
-        link
-            .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
-            .attr("class", "non")
-            .attr("x1", function (d) { return d.source.xpos; })
-            .attr("y1", function (d) { return d.source.ypos; })
-            .attr("x2", function (d) { return d.target.xpos; })
-            .attr("y2", function (d) { return d.target.ypos; });
-
-        node
-            .attr("key", function(d) { return d.key })
-            .attr("r",function(d) { return nodeScale(10)})
-            .attr("cx", function (d) { return d.xpos})
-            .attr("cy", function (d) { return d.ypos})
-    }
-
-   // simulation.force('link').link(links)
-
+        alfa = countgate.all();
+        alfa.forEach(function(element) {
+            for (i = 0; i < data.nodes.length; i++) {
+                if (data.nodes[i]["key"]==element.key){
+                    data.nodes[i]["check_ins"]=element.value;
+                }
+            }
+        })
+        createToolbar(data, cf, data1)
+        creaGrafo(data)
+        })
     })
+}
+var tutti =['alfa','beta','gamma','tutti']
+function createToolbar(data, cf, data1) {
+    k=-1;
 
-})
+    // create a selector for Years
+    toolbar.append("label")
+        .attr("style", "margin-right:5px")
+        .text("Years:");
 
+    var tbYear = toolbar.append("div")
+        .attr('id', 'mode-group')
+        .attr('class', 'btn-group year-group')
+        .attr('data-toggle', 'buttons')
+        .attr('style', 'margin-right:20px; margin-bottom: 10px')
+        .selectAll("button")
+        .data([1, 2, 3,'all'])
+        .enter()
+        .append("button")
+        .attr('class','btn btn-group btn-outline-primary')
+        .attr('role', 'group')
+        .text(function(d) {
+            k=k+1
+            return tutti[k]
+        })
+        .on("click", function(d) {
+            dispatch.call('changeYear', this, d);
+            console.log("click year", d);
+            updateGrafo(d,data, data1)
+        })
+
+
+
+}
+return me;
+}
+
+let myApp = app();
+d3.select("#viz")
+    .call(myApp);

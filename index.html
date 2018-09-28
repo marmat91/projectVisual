@@ -5,7 +5,7 @@
     <title>Vast Challenge 2017 Mini challenge 1</title>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="node_modules/crossfilter/crossfilter.min.js" charset="utf-8"></script>
-
+    <script src="js/provaGra.js" charset="utf-8"></script>
     <script src="js/dati.js" charset="utf-8"></script>
 </head>
 <body>
@@ -14,14 +14,15 @@
 </div>
 
     <div id="map" align="center">
-        <svg width="450pt" height="450pt" viewBox="0 0 250.000000 250.000000"
+        <svg width="500pt" height="500pt" viewBox="0 0 250.000000 250.000000"
               id="xyz">
         </svg>
     </div>
 <script>
-let svg = d3.select("#xyz").append("svg");
+let svg = d3.select("#xyz");
+let toolbar = d3.select("#toolbar");
+
 </script>
-    <script src="js/fileop.js" charset="utf-8"></script>
 
 </body>
 </html>
