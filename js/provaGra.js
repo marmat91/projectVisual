@@ -69,13 +69,16 @@ function updateGrafo (selection, dati, data1){
     svg.selectAll("g").remove();
     if (selection=='all'){
         var datiUpDim = cf.dimension(function(d) {return d.gatename;});
-        var datiUpGroup= datiUpDim.group().reduceCount().all();
+        var datiUpG= datiUpDim.group().reduceSum(function(d) { return d.n; }),
+        datiUpGroup=datiUpG.all();
     } else {
     var cartype = cf.dimension(function(d) { return d.cartype; });
     console.log (cartype);
     cartype.filterExact(selection);
     var datiUpDim = cf.dimension(function(d) {return d.gatename;});
-    var datiUpGroup= datiUpDim.group().reduceCount().all();
+    var datiUpDim = cf.dimension(function(d) {return d.gatename;});
+    var datiUpG= datiUpDim.group().reduceSum(function(d) { return d.n; }),
+    datiUpGroup=datiUpG.all();
     }
 
     console.log (datiUpDim);
