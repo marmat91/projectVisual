@@ -37,14 +37,20 @@ function createToolbar(data, data1) {
         .text("Seleziona il tipo di veicolo:");
 
     var tbYear = toolbar.append("div")
-        .attr('id', 'mode-group')
-        .attr('class', 'btn-group year-group')
-        .attr('data-toggle', 'buttons')
-        .attr('style', 'margin-right:20px; margin-bottom: 10px')
-        .selectAll("button")
+        .attr('id', 'check-group')
+        .attr('class', 'check-b')
+        .attr('data-toggle', 'checkbox')
+        //.attr('style', 'margin-right:20px; margin-bottom: 10px')
+        .selectAll("checkbox")
         .data(['1', '2', '2P', '3','4','5','6','all'])
-        .enter()
-        .append("button")
+        .enter().append("label").text(function(d) {
+            k=k+1
+            return tutti[k]
+        })
+        .append("input")
+        //.attr("checked", true)
+        .attr("type", "radio")
+        //.append("checkbox")
         .attr('class','btn btn-group btn-outline-primary')
         .attr('role', 'group')
         .text(function(d) {
