@@ -36,35 +36,25 @@ function createToolbar(data, data1) {
         .attr("style", "margin-right:5px")
         .text("Seleziona il tipo di veicolo:");
 
-    var tbYear = toolbar.append("div")
-        .attr('id', 'check-group')
-        .attr('class', 'check-b')
-        .attr('data-toggle', 'checkbox')
-        //.attr('style', 'margin-right:20px; margin-bottom: 10px')
-        .selectAll("checkbox")
+    var tbYear = toolbar.append("form");
+    labels = tbYear.selectAll("button")
         .data(['1', '2', '2P', '3','4','5','6','all'])
-        .enter().append("label").text(function(d) {
-            k=k+1
-            return tutti[k]
-        })
-        .append("input")
-        //.attr("checked", true)
-        .attr("type", "radio")
-        //.append("checkbox")
-        .attr('class','btn btn-group btn-outline-primary')
-        .attr('role', 'group')
+        .enter()
+        .append("div")
+        .append("button")
         .text(function(d) {
             k=k+1
             return tutti[k]
         })
+        //.attr('border-radius', '12px')
+        .attr('style', 'width:180px')
+        //.attr("type", "button")
+        .attr('name', 'mode')
         .on("click", function(d) {
             dispatch.call('changeYear', this, d);
             console.log("click year", d);
             updateGrafo(d,data, data1)
         })
-
-
-
 }
 
 
@@ -82,16 +72,17 @@ function createToolbar2(data, data1) {
         .text("Seleziona la data:");
 
     var tbYear = toolbar.append("div")
-        .attr('id', 'mode-group')
-        .attr('class', 'btn-group year-group')
-        .attr('data-toggle', 'buttons')
-        .attr('style', 'margin-right:20px; margin-bottom: 10px')
+       // .attr('id', 'mode-group')
+       // .attr('class', 'btn-group year-group')
+        //.attr('data-toggle', 'buttons')
+        //.attr('style', 'margin-right:20px; margin-bottom: 10px')
         .selectAll("button")
         .data(date)
         .enter()
+        .append("div")
         .append("button")
-        .attr('class','btn btn-group btn-outline-primary')
-        .attr('role', 'group')
+        //.attr('class','btn btn-group btn-outline-primary')
+        //.attr('role', 'group')
         .text(function(d) {
             return d.key
         })
