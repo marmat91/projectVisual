@@ -1,3 +1,14 @@
+let mese_anno='tutte';
+let tipo_veicolo='tutti';
+let vei='Tutti';
+let tutti =[{key:"1",value:"Auto a 2 assi (o moto)"},
+    {key:"2", value:"Camion a 2 assi"},
+    {key:"2P", value:"Camion a 2 assi del parco"},
+    {key:"3", value:"Camion a 3 assi"},
+    {key:"4", value:"Camion 4 assi o superiore"},
+    {key:"5",value:"Bus a 2 assi"},
+    {key:"6", value:"Bus a 3 assi"},
+    {key:"tutti", value:"Tutti"}];
 function app (){
 var i=0;
 var dispatch = d3.dispatch("changeYear");
@@ -24,40 +35,45 @@ function me (selection){
         createToolbar(data, data1)
         createToolbar2(data, data1)
         creaGrafo(data)
+        creaGrafico(data, data1)
+        provaBarre(data1)
         })
     })
 }
-var tutti =['Auto a 2 assi (o moto)','Camion a 2 assi','Camion a 2 assi del parco','Camion a 3 assi','Camion 4 assi o superiore','Bus a 2 assi','Bus a 3 assi','Tutti']
+
+
 function createToolbar(data, data1) {
     k=-1;
+    console.log(tutti);
+
 
     // create a selector for Years
     toolbar.append("label")
-        .attr("style", "margin-right:5px")
+        .attr("style", "font-size: 18pt")
         .text("Seleziona il tipo di veicolo:");
 
     var tbYear = toolbar.append("form");
     labels = tbYear.selectAll("button")
-        .data(['1', '2', '2P', '3','4','5','6','all'])
+        .data(tutti)
         .enter()
         .append("div")
         .append("button")
         .text(function(d) {
-            k=k+1
-            return tutti[k]
+            return d.value
         })
         //.attr('border-radius', '12px')
-        .attr('style', 'width:180px')
+        .attr('style', 'width:180px; height:40px; font-size: 14pt; font-weight: bold')
         //.attr("type", "button")
         .attr('name', 'mode')
         .on("click", function(d) {
-            dispatch.call('changeYear', this, d);
             console.log("click year", d);
-            updateGrafo(d,data, data1)
+            tipo_veicolo=d.key;
+            vei=d.value;
+            updateGrafo(data, data1)
         })
 }
 
-
+var date_all =['tutte','2015-05','2015-06','2015-07','2015-08','2015-09','2015-10','2015-11','2015-12','2016-01','2016-02','2016-03','2016-04','2016-05']
 function createToolbar2(data, data1) {
     k=-1;
     var cf	=	crossfilter(data1);
@@ -67,33 +83,27 @@ function createToolbar2(data, data1) {
     console.log (date);
 
     // create a selector for Years
-    toolbar.append("label")
-        .attr("style", "margin-right:5px")
+    toolbar2.append("label")
+        .attr("style", "font-size: 18pt")
         .text("Seleziona la data:");
 
-    var tbYear = toolbar.append("div")
-       // .attr('id', 'mode-group')
-       // .attr('class', 'btn-group year-group')
-        //.attr('data-toggle', 'buttons')
-        //.attr('style', 'margin-right:20px; margin-bottom: 10px')
-        .selectAll("button")
-        .data(date)
+    var tbYear = toolbar2.append("select")
+        .on('change',function(d) {
+            mese_anno=this.value;
+            console.log(mese_anno);
+            updateGrafo(data, data1)
+
+        })
+        .attr('name','selettore')
+        .selectAll("option")
+        .data(date_all)
         .enter()
-        .append("div")
-        .append("button")
-        //.attr('class','btn btn-group btn-outline-primary')
-        //.attr('role', 'group')
+        .append("option")
+        .attr('style', 'width:100px; height:30px; font-size: 14pt; font-weight: bold')
         .text(function(d) {
-            return d.key
-        })
-        .on("click", function(d) {
-            dispatch.call('changeYear', this, d);
-            console.log("click year", d);
-            updateGrafo(Object.values(d)[0],data, data1)
-        })
+            return d
+        });
 }
-
-
 
 return me;
 }

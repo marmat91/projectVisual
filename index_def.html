@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vast Challenge 2017 Mini challenge 1</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="node_modules/crossfilter/crossfilter.min.js" charset="utf-8"></script>
+    <script src="js/provaGra.js" charset="utf-8"></script>
+    <script src="js/dati.js" charset="utf-8"></script>
+    <script src="js/update.js" charset="utf-8"></script>
+    <script src="js/update.js" charset="utf-8"></script>
+    <script src="js/br.js" charset="utf-8"></script>
+
+
+
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+    body, html {height: 100%}
+    body,h3,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+    .menu {display: none}
+    .bgimg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../project/csv/vast2.jpg);
+        min-height: 65%;
+    }
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+        <a href="#" class="w3-bar-item w3-button">HOME</a>
+        <a href="#mappa" class="w3-bar-item w3-button">MAPPA</a>
+        <a href="#barre" class="w3-bar-item w3-button">GRAFICO A BARRE</a>
+        <a href="#chart" class="w3-bar-item w3-button">CONTACT</a>
+    </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-containerm w3-grayscale-min" id="home" style="height: 600px">
+
+    <div class="w3-display-middle w3-center">
+        <span style="font-size:325px"><br></span>
+        <p><a href="#mappa" class="w3-button w3-xxlarge w3-black">Go to visualization</a></p>
+    </div>
+</header>
+
+<!-- Menu Container -->
+<div class="w3-container w3-black  w3-padding-64 w3-xxlarge" id="mappa">
+    <div class="w3-content">
+        <div id="toolbar" style="float: left" >
+        </div>
+        <span id="map" style="float: left">
+            <svg width="550pt" height="550pt" viewBox="0 0 250.000000 250.000000"
+                 id="xyz">
+            </svg>
+        </span>
+        <span id="toolbar2">
+        </span>
+    </div>
+</div>
+
+<!-- secondo spazio -->
+<div class="w3-container w3-padding-64 w3-cyan w3-xlarge" id="barre">
+    <div class="w3-content">
+        <svg id="graf" width="600" height="500">
+
+        </svg>
+
+
+    </div>
+</div>
+
+<!-- ultimo spazio -->
+<div id="chart">
+    <svg id="ch" width="600" height="500">
+
+    </svg>
+</div>
+
+<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+    <div class="w3-content">
+
+CIAO
+    </div>
+</div>
+
+
+</body>
+
+<script>
+    let svg = d3.select("#xyz");
+    let toolbar = d3.select("#toolbar");
+    let toolbar2 = d3.select("#toolbar2");
+
+
+</script>
+</html>
