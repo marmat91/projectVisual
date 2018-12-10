@@ -9,12 +9,11 @@ let tutti =[{key:"1",value:"Auto a 2 assi (o moto)"},
     {key:"5",value:"Bus a 2 assi"},
     {key:"6", value:"Bus a 3 assi"},
     {key:"tutti", value:"Tutti"}];
+console.log(tutti)
 function app (){
 var i=0;
 var dispatch = d3.dispatch("changeYear");
-function me (selection){
-    console.log('selection');
-
+function me (){
     d3.json("data/graph.json", function(data) {
     console.log(data);
     d3.json("data/dati_mese.json", function(data1) {
@@ -105,9 +104,6 @@ function createToolbar2(data, data1) {
         });
 }
 
-return me;
+ me();
 }
-
-let myApp = app();
-d3.select("#viz")
-    .call(myApp);
+app();

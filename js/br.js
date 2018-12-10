@@ -1,17 +1,14 @@
 function provaBarre (data1){
-    console.log (data1);
-    console.log (tutti);
+
     a=[];
 
     for (j = 0; j<7;j++){
-        console.log (tutti[j].key);
         var cf	=	crossfilter(data1);
         var cartype = cf.dimension(function(d) { return d.cartype; });
         cartype.filterExact(tutti[j].key);
         var datiUpVei = cf.dimension(function(d) {return d.meseanno;});
         var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
             datiUpGroup=datiUpV.all();
-        console.log (datiUpGroup);
         switch (j) {
             case 0:
                 for (i = 0; i < datiUpGroup.length; i++) {
@@ -98,8 +95,6 @@ function provaBarre (data1){
             })
         };
     });
-    console.log("seriesData", seriesData);
-    console.log(colore);
 
     x.domain(data.map(function (d) { return d.quarter; })); //E
     y.domain([

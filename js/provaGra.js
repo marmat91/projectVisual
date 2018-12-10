@@ -1,5 +1,15 @@
 function creaGrafo (selection){
     console.log (selection);
+    var margin = {top: 0, right: 0, bottom: 0, left: 0},
+        width  = 650 - margin.left - margin.right,
+        height = 650  - margin.top  - margin.bottom;
+
+    var svg = d3.select("#xyz")
+        .attr("width",  width  + margin.left + margin.right)
+        .attr("height", height + margin.top  + margin.bottom)
+        .attr("viewBox", "0 0 250.000000 250.000000")
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var link = svg.append("g")
         .attr("class", "links")
@@ -65,7 +75,7 @@ function creaGrafo (selection){
         .force("link", d3.forceLink().id(function(d) {return d.key;}))
 
     node.append("title")
-        .text(function(d) { return  d.key + ", n° veicoli: " + d.check_ins  ; })
+        .text(function(d) { return  d.key + ", \nn° veicoli: " + d.check_ins  ; })
     // add nodes and links to simulation
     simulation
         .nodes(selection.nodes)
@@ -203,7 +213,7 @@ function updateGrafo ( dati, data1){
         .force("link", d3.forceLink().id(function(d) {return d.key;}))
 
     node.append("title")
-        .text(function(d) { return  d.key + ", n° veicoli: " + d.check_ins ;})
+        .text(function(d) { return  d.key + ", \nn° veicoli: " + d.check_ins ;})
     // add nodes and links to simulation
     simulation
         .nodes(dati.nodes)

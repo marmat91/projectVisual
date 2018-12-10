@@ -7,12 +7,6 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="node_modules/crossfilter/crossfilter.min.js" charset="utf-8"></script>
-    <script src="js/provaGra.js" charset="utf-8"></script>
-    <script src="js/dati.js" charset="utf-8"></script>
-    <script src="js/update.js" charset="utf-8"></script>
-    <script src="js/update.js" charset="utf-8"></script>
-    <script src="js/br.js" charset="utf-8"></script>
-
 
 
 
@@ -58,8 +52,7 @@
         <div id="toolbar" style="float: left" >
         </div>
         <span id="map" style="float: left">
-            <svg width="550pt" height="550pt" viewBox="0 0 250.000000 250.000000"
-                 id="xyz">
+            <svg id="xyz">
             </svg>
         </span>
         <span id="toolbar2">
@@ -68,29 +61,26 @@
 </div>
 
 <!-- secondo spazio -->
-<div class="w3-container w3-padding-64 w3-cyan w3-xlarge" id="barre">
+<div style="padding-top:64px; padding-bottom:64px; background-color:powderblue;" id="barre">
     <div class="w3-content">
-        <svg id="graf" width="600" height="500">
-
+        <svg id="ch">
         </svg>
-
-
     </div>
 </div>
 
 <!-- ultimo spazio -->
-<div id="chart">
-    <br/>
-    <br/>
-    <svg id="ch" >
-
+<div id="chart" >
+    <div class="w3-content">
+    <svg id="graf">
     </svg>
+    </div>
 </div>
 
 <div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
-    <div class="w3-content">
+    <div class="w3-content" id="tabel">
 
-CIAO
+
+
     </div>
 </div>
 
@@ -101,7 +91,11 @@ CIAO
     let svg = d3.select("#xyz");
     let toolbar = d3.select("#toolbar");
     let toolbar2 = d3.select("#toolbar2");
-
-
+    console.log(svg);
 </script>
+<script src="js/provaGra.js" charset="utf-8"></script>
+<script src="js/dati.js" charset="utf-8"></script>
+<script src="js/update.js" charset="utf-8"></script>
+<script src="js/br.js" charset="utf-8"></script>
+<script src="js/tabella.js" charset="utf-8"></script>
 </html>
