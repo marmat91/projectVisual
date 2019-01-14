@@ -11,7 +11,6 @@
 
 
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="stile.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <style>
@@ -49,13 +48,23 @@
 <!-- Menu Container -->
 <div class="w3-container w3-black  w3-padding-64 w3-xxlarge" id="mappa">
     <div class="w3-content">
-        <div id="toolbar" style="float: left" >
-        </div>
-        <span id="map" style="float: left">
+        <span style="float: left">
+            <div id="toolbar">
+            </div>
+            <br/>
+            <div id="toolbar2"></div>
+            <br/>
+            <div >
+                <label style="font-size: 18pt">Seleziona il giorno:</label>
+                <br/>
+                <select id="toolbar3">
+                </select>
+            </div>
+        </span>
+
+        <span id="map" style="float: right">
             <svg id="xyz">
             </svg>
-        </span>
-        <span id="toolbar2">
         </span>
     </div>
 </div>
@@ -90,12 +99,12 @@
 <script>
     let svg = d3.select("#xyz");
     let toolbar = d3.select("#toolbar");
-    let toolbar2 = d3.select("#toolbar2");
-    console.log(svg);
+    let toolbar3 = d3.select("#toolbar3");
 </script>
-<script src="js/provaGra.js" charset="utf-8"></script>
 <script src="js/dati.js" charset="utf-8"></script>
-<script src="js/update.js" charset="utf-8"></script>
-<script src="js/br.js" charset="utf-8"></script>
+<script src="js/provaGra.js" charset="utf-8"></script>
+<script src="js/barre.js" charset="utf-8"></script>
+<script src="js/linechart.js" charset="utf-8"></script>
+<script src="js/up_linchart.js" charset="utf-8"></script>
 <script src="js/tabella.js" charset="utf-8"></script>
 </html>

@@ -1,13 +1,11 @@
-function provaBarre (data1){
-
-    a=[];
-
+function creaLinechart (data2){
+    a=[]; //nello switch gli assegno i valori
     for (j = 0; j<7;j++){
-        var cf	=	crossfilter(data1);
+        var cf	=	crossfilter(data2);
         var cartype = cf.dimension(function(d) { return d.cartype; });
         cartype.filterExact(tutti[j].key);
         var datiUpVei = cf.dimension(function(d) {return d.meseanno;});
-        var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
+        var datiUpV= datiUpVei.group().reduceCount(),
             datiUpGroup=datiUpV.all();
         switch (j) {
             case 0:
@@ -143,8 +141,13 @@ function provaBarre (data1){
         .style("fill", function (d) { return colore[d.name]; })
         .style("stroke", "grey")
         .style("stroke-width", "2px")
+        .on("click", function(d) {
+            var mese_a=d.label;
+            upLinechart(data2, mese_a)
+        })
         .append("title")
         .text(function(d) { return  d.name+"\nData: "+d.label + "\nNumero  " + d.value  ; })
+    //////onclick è quiii
 
     var legend = svg_line.selectAll(".legend")
         .data(varNames.slice().reverse())
@@ -163,9 +166,4 @@ function provaBarre (data1){
         .attr("dy", ".35em")
         .style("text-anchor", "end")
         .text(function (d) { return d; });
-
-
-
-
-
 }

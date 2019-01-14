@@ -1,5 +1,4 @@
 function creaGrafo (selection){
-    console.log (selection);
     var margin = {top: 0, right: 0, bottom: 0, left: 0},
         width  = 650 - margin.left - margin.right,
         height = 650  - margin.top  - margin.bottom;
@@ -35,6 +34,7 @@ function creaGrafo (selection){
     (selection.nodes).forEach(function(element) {
         valori.push(element.check_ins);
     })
+    console.log(valori)
     var minmax = d3.extent(valori);
     console.log(minmax);
     var nodeScale = d3.scaleLinear()
@@ -101,45 +101,30 @@ function creaGrafo (selection){
             .attr("cx", function (d) { return d.xpos;})
             .attr("cy", function (d) { return d.ypos;});
     }
+    console.log("Fine grafo")
 }
-function updateGrafo ( dati, data1){
-    var cf	=	crossfilter(data1);
+function updateGrafo ( dati, data2){
+    var cf	=	crossfilter(data2);
     svg.selectAll("g").remove();
     console.log (mese_anno);
     console.log (tipo_veicolo);
-    if (mese_anno=='tutte'){
-        if (tipo_veicolo=='tutti'){
-            var datiUpVei = cf.dimension(function(d) {return d.gatename;});
-            var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
-            datiUpGroup=datiUpV.all();
-        } else {
-        var cartype = cf.dimension(function(d) { return d.cartype; });
-        cartype.filterExact(tipo_veicolo);
-        var datiUpVei = cf.dimension(function(d) {return d.gatename;});
-        var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
-        datiUpGroup=datiUpV.all();
-        console.log (datiUpGroup);
 
-        }
-    } else {
-        if (tipo_veicolo=='tutti'){
-            var prov = cf.dimension(function(d) { return d.meseanno; });
-            prov.filterExact(mese_anno);
-            var datiUpVei = cf.dimension(function(d) {return d.gatename;});
-            var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
-                datiUpGroup=datiUpV.all();
-            console.log (datiUpGroup);
-        }else {
-        var prov = cf.dimension(function(d) { return d.meseanno; });
-        prov.filterExact(mese_anno);
-        var cartype = cf.dimension(function(d) { return d.cartype; });
-        cartype.filterExact(tipo_veicolo);
-        var datiUpVei = cf.dimension(function(d) {return d.gatename;});
-        var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
-        datiUpGroup=datiUpV.all();
-        console.log (datiUpGroup);
-        }
+    if (mese_anno!='tutte'){
+    var prov = cf.dimension(function(d) { return d.meseanno; });
+    prov.filterExact(mese_anno);
     }
+    if (giorno!='Tutti i giorni'){
+        var prov = cf.dimension(function(d) { return d.giorno; });
+        prov.filterExact(giorno);
+    }
+    if (tipo_veicolo!='tutti'){
+    var cartype = cf.dimension(function(d) { return d.cartype; });
+    cartype.filterExact(tipo_veicolo);
+    }
+    var datiUpVei = cf.dimension(function(d) {return d.gatename;});
+    var datiUpV= datiUpVei.group().reduceCount(),
+        datiUpGroup=datiUpV.all();
+    console.log (datiUpGroup);
 
     datiUpGroup.forEach(function(element) {
         for (i = 0; i < dati.nodes.length; i++) {
