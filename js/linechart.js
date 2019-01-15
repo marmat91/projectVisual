@@ -1,6 +1,9 @@
 function creaLinechart (data2){
+    d3.select("#chBut").selectAll("g").remove();
     a=[]; //nello switch gli assegno i valori
     for (j = 0; j<7;j++){
+        console.log(data2);
+        console.log(tutti[j].key);
         var cf	=	crossfilter(data2);
         var cartype = cf.dimension(function(d) { return d.cartype; });
         cartype.filterExact(tutti[j].key);
@@ -8,37 +11,37 @@ function creaLinechart (data2){
         var datiUpV= datiUpVei.group().reduceCount(),
             datiUpGroup=datiUpV.all();
         switch (j) {
-            case 0:
+            case 1:
                 for (i = 0; i < datiUpGroup.length; i++) {
                     a[i]=({quarter:datiUpGroup[i].key, "Auto a 2 assi (o moto)":datiUpGroup[i].value});
                 }
                 break;
-            case 1:
+            case 2:
                 for (i = 0; i < datiUpGroup.length; i++) {
                     Object.assign(a[i], {"Camion a 2 assi": datiUpGroup[i].value});
                 }
                 break;
-            case 2:
+            case 3:
                 for (i = 0; i < datiUpGroup.length; i++) {
                     Object.assign(a[i], {"Camion a 2 assi del parco": datiUpGroup[i].value});
                 }
                 break;
-            case 3:
+            case 4:
                 for (i = 0; i < datiUpGroup.length; i++) {
                     Object.assign(a[i], {"Camion a 3 assi": datiUpGroup[i].value});
                 }
                 break;
-            case 4:
+            case 5:
                 for (i = 0; i < datiUpGroup.length; i++) {
                     Object.assign(a[i], {"Camion 4 assi o superiore": datiUpGroup[i].value});
                 }
                 break;
-            case 5:
+            case 6:
                 for (i = 0; i < datiUpGroup.length; i++) {
                     Object.assign(a[i], {"Bus a 2 assi": datiUpGroup[i].value});
                 }
                 break;
-            case 6:
+            case 7:
                 for (i = 0; i < datiUpGroup.length; i++) {
                     Object.assign(a[i], {"Bus a 3 assi": datiUpGroup[i].value});
                 }
@@ -147,7 +150,7 @@ function creaLinechart (data2){
         })
         .append("title")
         .text(function(d) { return  d.name+"\nData: "+d.label + "\nNumero  " + d.value  ; })
-    //////onclick è quiii
+    //////onclick è qui su
 
     var legend = svg_line.append("g")
         .selectAll(".legend")

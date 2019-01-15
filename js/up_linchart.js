@@ -1,3 +1,4 @@
+//escono tutti i giorni e rendere più veloce il codice
 function upLinechart (data2, mese_a){
     console.log("SEI NELL UP");
     d3.select("#ch").selectAll("g").remove();
@@ -11,38 +12,41 @@ function upLinechart (data2, mese_a){
         var datiUpGiorno = cf.dimension(function(d) {return d.giorno;});
         var datiUpV= datiUpGiorno.group().reduceCount(),
             datiUpGroup=datiUpV.all();
+        console.log(datiUpGroup)
+
         switch (j) {
-            case 0:
-                for (i = 0; i < datiUpGroup.length; i++) {
-                    a[i]=({quarter:datiUpGroup[i].key, "Auto a 2 assi (o moto)":datiUpGroup[i].value});
-                }
-                break;
             case 1:
                 for (i = 0; i < datiUpGroup.length; i++) {
-                    Object.assign(a[i], {"Camion a 2 assi": datiUpGroup[i].value});
+                    a[i]=({quarter:datiUpGroup[i].key, "Auto a 2 assi (o moto)":datiUpGroup[i].value});
+                    //Object.assign(a[i], {"Auto a 2 assi (o moto)": datiUpGroup[i].value});
                 }
                 break;
             case 2:
                 for (i = 0; i < datiUpGroup.length; i++) {
-                    Object.assign(a[i], {"Camion a 2 assi del parco": datiUpGroup[i].value});
+                    Object.assign(a[i], {"Camion a 2 assi": datiUpGroup[i].value});
                 }
                 break;
             case 3:
                 for (i = 0; i < datiUpGroup.length; i++) {
-                    Object.assign(a[i], {"Camion a 3 assi": datiUpGroup[i].value});
+                    Object.assign(a[i], {"Camion a 2 assi del parco": datiUpGroup[i].value});
                 }
                 break;
             case 4:
                 for (i = 0; i < datiUpGroup.length; i++) {
-                    Object.assign(a[i], {"Camion 4 assi o superiore": datiUpGroup[i].value});
+                    Object.assign(a[i], {"Camion a 3 assi": datiUpGroup[i].value});
                 }
                 break;
             case 5:
                 for (i = 0; i < datiUpGroup.length; i++) {
-                    Object.assign(a[i], {"Bus a 2 assi": datiUpGroup[i].value});
+                    Object.assign(a[i], {"Camion 4 assi o superiore": datiUpGroup[i].value});
                 }
                 break;
             case 6:
+                for (i = 0; i < datiUpGroup.length; i++) {
+                    Object.assign(a[i], {"Bus a 2 assi": datiUpGroup[i].value});
+                }
+                break;
+            case 7:
                 for (i = 0; i < datiUpGroup.length; i++) {
                     Object.assign(a[i], {"Bus a 3 assi": datiUpGroup[i].value});
                 }
@@ -73,13 +77,11 @@ function upLinechart (data2, mese_a){
 
     var yAxis = d3.axisLeft(y);
 
-
-
     var line = d3.line()
         .x(function (d) { return x(d.label) + x.bandwidth() / 2; })
         .y(function (d) { return y(d.value); })
         .curve(d3.curveCardinal);
-    ;
+
 
     var labelVar = 'quarter'; //A
 
@@ -98,7 +100,7 @@ function upLinechart (data2, mese_a){
         };
     });
 
-    x.domain(data.map(function (d) { return d.quarter; })); //E
+    x.domain(data.map(function (d) { console.log(d); return d.quarter; })); //E
     y.domain([
         d3.min(seriesData, function (c) {
             return d3.min(c.values, function (d) { return d.value; });
@@ -146,8 +148,7 @@ function upLinechart (data2, mese_a){
         .style("stroke", "grey")
         .style("stroke-width", "2px")
         .append("title")
-        .text(function(d) { return  d.name+"\nData: "+d.label + "\nNumero  " + d.value  ; })
-    //////NEI CIRCLE l'onclick???
+        .text(function(d) { return  d.name+"\nGiorno: "+d.label + "\nNumero  " + d.value  ; })
 
     var legend = svg_line.selectAll(".legend")
         .data(varNames.slice().reverse())
@@ -166,4 +167,21 @@ function upLinechart (data2, mese_a){
         .attr("dy", ".35em")
         .style("text-anchor", "end")
         .text(function (d) { return d; });
+
+
+    var indietro = d3.select("#chBut")
+        .append("g")
+        .append("button")
+        .style("font-size","15pt")
+        .text("Back")
+        .on("click", function(d) {
+            creaLinechart(data2)
+        });
+
+    var indietro = d3.select("#chBut")
+        .append("g")
+        .style("font-size","20pt")
+        .text("Anno-mese selezionato: "+mese_a);
+
+
 }

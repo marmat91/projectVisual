@@ -6,6 +6,7 @@ let colori_base = [
     {key:"camping", value:"sandybrown"},
     {key:"ranger-base", value:"fuchsia"}];
 function creaGrafo (selection){
+    console.log(selection);
     var margin = {top: 0, right: 0, bottom: 0, left: 0},
         width  = 650 - margin.left - margin.right,
         height = 650  - margin.top  - margin.bottom;
@@ -125,10 +126,9 @@ function creaGrafo (selection){
     }
     console.log("Fine grafo")
 }
-function updateGrafo ( dati, data2){
+function updateGrafo (dati, data2){
     var cf	=	crossfilter(data2);
     svg.selectAll("g").remove();
-
     var legend = svg.append("g")
         .selectAll(".legend")
         .data(colori_base)
@@ -144,7 +144,6 @@ function updateGrafo ( dati, data2){
     legend.append("text")
         .attr("x", 50 - 12)
         .attr("y", 6)
-        //.attr("dy", ".35em")
         .style("text-anchor", "end")
         .attr("fill", "yellow")
         .style("font-size","7pt")

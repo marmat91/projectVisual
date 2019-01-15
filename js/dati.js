@@ -148,7 +148,6 @@ function createToolbar2(data, data1, data2) {
             console.log (appoggio[0]);
             console.log (Object.values(date));
         }
-        //console.log (appoggio[0]);
 
         var tbYear = toolbar3
             .on('change',function(d) {
