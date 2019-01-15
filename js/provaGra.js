@@ -1,7 +1,15 @@
+let colori_base = [
+    {key:"general-gate", value:"paleturquoise"},
+    {key:"entrance",value:"palegreen"},
+    {key:"ranger-stop", value:"lemonchiffon"},
+    {key:"gate", value:"crimson"},
+    {key:"camping", value:"sandybrown"},
+    {key:"ranger-base", value:"fuchsia"}];
 function creaGrafo (selection){
     var margin = {top: 0, right: 0, bottom: 0, left: 0},
         width  = 650 - margin.left - margin.right,
         height = 650  - margin.top  - margin.bottom;
+
 
     var svg = d3.select("#xyz")
         .attr("width",  width  + margin.left + margin.right)
@@ -9,6 +17,27 @@ function creaGrafo (selection){
         .attr("viewBox", "0 0 250.000000 250.000000")
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var legend = svg.append("g")
+        .selectAll(".legend")
+        .data(colori_base)
+        .enter()
+        .append("g")
+        .attr("class", "legend")
+        .attr("transform", function (d, i) {  console.log(d); return "translate(200," + i * 10 + ")"; });
+    legend.append("circle")
+        .attr("cx", 42)
+        .attr("cy", 3)
+        .attr("r", 3)
+        .style("fill", function (d) {return d.value; });
+    legend.append("text")
+        .attr("x", 50 - 12)
+        .attr("y", 6)
+        //.attr("dy", ".35em")
+        .style("text-anchor", "end")
+        .attr("fill", "yellow")
+        .style("font-size","7pt")
+        .text(function (d) { return d.key; });
 
     var link = svg.append("g")
         .attr("class", "links")
@@ -64,13 +93,6 @@ function creaGrafo (selection){
         .attr("x", function (d) { return nodeScale(d)*2-4})
         .attr("y", -16)
 
-    var legenda2 = svg.append("g")
-        .attr("transform","translate(130 ,13)")
-        .append("text")
-        .attr("fill", "white")
-        .style("font-size","6pt")
-        .text("Veicolo selezionato: "+ vei)
-
     var simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(function(d) {return d.key;}))
 
@@ -106,6 +128,28 @@ function creaGrafo (selection){
 function updateGrafo ( dati, data2){
     var cf	=	crossfilter(data2);
     svg.selectAll("g").remove();
+
+    var legend = svg.append("g")
+        .selectAll(".legend")
+        .data(colori_base)
+        .enter()
+        .append("g")
+        .attr("class", "legend")
+        .attr("transform", function (d, i) {  console.log(d); return "translate(200," + i * 10 + ")"; });
+    legend.append("circle")
+        .attr("cx", 42)
+        .attr("cy", 3)
+        .attr("r", 3)
+        .style("fill", function (d) {return d.value; });
+    legend.append("text")
+        .attr("x", 50 - 12)
+        .attr("y", 6)
+        //.attr("dy", ".35em")
+        .style("text-anchor", "end")
+        .attr("fill", "yellow")
+        .style("font-size","7pt")
+        .text(function (d) { return d.key; });
+
     console.log (mese_anno);
     console.log (tipo_veicolo);
 
@@ -187,13 +231,6 @@ function updateGrafo ( dati, data2){
         .attr("x", function (d) { return nodeScale(d)*2-4})
         .attr("y", -16)
 
-    var legenda2 = svg.append("g")
-        .attr("transform","translate(130 ,13)")
-        .append("text")
-        .attr("fill", "white")
-        .style("font-size","6pt")
-        .text("Veicolo selezionato: "+ vei)
-
     var simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(function(d) {return d.key;}))
 
@@ -224,4 +261,5 @@ function updateGrafo ( dati, data2){
             .attr("cx", function (d) { return d.xpos;})
             .attr("cy", function (d) { return d.ypos;});
     }
+
 }

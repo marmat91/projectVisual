@@ -149,11 +149,13 @@ function creaLinechart (data2){
         .text(function(d) { return  d.name+"\nData: "+d.label + "\nNumero  " + d.value  ; })
     //////onclick è quiii
 
-    var legend = svg_line.selectAll(".legend")
+    var legend = svg_line.append("g")
+        .selectAll(".legend")
         .data(varNames.slice().reverse())
         .enter().append("g")
         .attr("class", "legend")
-        .attr("transform", function (d, i) { return "translate(55," + i * 20 + ")"; });
+        .attr("transform", function (d, i) {
+            return "translate(55," + i * 20 + ")"; });
     legend.append("rect")
         .attr("x", width - 10)
         .attr("width", 10)
