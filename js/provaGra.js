@@ -63,6 +63,7 @@ function creaGrafo (selection){
     var valori =[];
     (selection.nodes).forEach(function(element) {
         valori.push(element.check_ins);
+        console.log(element.check_ins)
     })
     console.log(valori)
     var minmax = d3.extent(valori);
@@ -165,10 +166,11 @@ function updateGrafo (dati, data2){
     cartype.filterExact(tipo_veicolo);
     }
     var datiUpVei = cf.dimension(function(d) {return d.gatename;});
-    var datiUpV= datiUpVei.group().reduceCount(),
+    var datiUpV= datiUpVei.reduceSum(function(d) { return d.n; }),
         datiUpGroup=datiUpV.all();
     console.log (datiUpGroup);
 
+    //cambio i valori di check_ins con quelli aggiornati
     datiUpGroup.forEach(function(element) {
         for (i = 0; i < dati.nodes.length; i++) {
             if (dati.nodes[i]["key"]==element.key){

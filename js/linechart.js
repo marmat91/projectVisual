@@ -1,15 +1,15 @@
-function creaLinechart (data2){
+function creaLinechart (data2, data1){
     d3.select("#chBut").selectAll("g").remove();
     a=[]; //nello switch gli assegno i valori
     for (j = 0; j<7;j++){
-        console.log(data2);
         console.log(tutti[j].key);
-        var cf	=	crossfilter(data2);
+        var cf	=	crossfilter(data1);
         var cartype = cf.dimension(function(d) { return d.cartype; });
         cartype.filterExact(tutti[j].key);
         var datiUpVei = cf.dimension(function(d) {return d.meseanno;});
-        var datiUpV= datiUpVei.group().reduceCount(),
+        var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
             datiUpGroup=datiUpV.all();
+
         switch (j) {
             case 1:
                 for (i = 0; i < datiUpGroup.length; i++) {
@@ -146,7 +146,7 @@ function creaLinechart (data2){
         .style("stroke-width", "2px")
         .on("click", function(d) {
             var mese_a=d.label;
-            upLinechart(data2, mese_a)
+            upLinechart(data2, mese_a, data1)
         })
         .append("title")
         .text(function(d) { return  d.name+"\nData: "+d.label + "\nNumero  " + d.value  ; })

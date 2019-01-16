@@ -1,5 +1,5 @@
 //escono tutti i giorni e rendere più veloce il codice
-function upLinechart (data2, mese_a){
+function upLinechart (data2, mese_a, data1){
     console.log("SEI NELL UP");
     d3.select("#ch").selectAll("g").remove();
     a=[]; //nello switch gli assegno i valori
@@ -10,7 +10,7 @@ function upLinechart (data2, mese_a){
         var datiUpVei = cf.dimension(function(d) {return d.meseanno;});
         datiUpVei.filterExact(mese_a);
         var datiUpGiorno = cf.dimension(function(d) {return d.giorno;});
-        var datiUpV= datiUpGiorno.group().reduceCount(),
+        var datiUpV= datiUpGiorno.group().reduceSum(function(d) { return d.n; }),
             datiUpGroup=datiUpV.all();
         console.log(datiUpGroup)
 
@@ -175,7 +175,7 @@ function upLinechart (data2, mese_a){
         .style("font-size","15pt")
         .text("Back")
         .on("click", function(d) {
-            creaLinechart(data2)
+            creaLinechart(data2,data1)
         });
 
     var indietro = d3.select("#chBut")

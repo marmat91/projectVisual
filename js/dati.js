@@ -17,13 +17,13 @@ function me (){
     d3.json("data/graph.json", function(data) {
     console.log(data);
         d3.json("data/dati_mese.json", function(data1) {
-            d3.json("data/dati_completi.json", function (data2){
+            d3.json("data/dati_mese_giorno.json", function (data2){
                 console.log(data2)
                 createToolbar(data, data1, data2)
                 createToolbar2(data, data1, data2)
                 creaGrafo(data)
                 creaBarre(data, data2)
-                creaLinechart(data2)
+                creaLinechart(data2, data1)
             })
         })
     })
