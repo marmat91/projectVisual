@@ -11,7 +11,6 @@ function creaGrafo (selection){
         width  = 650 - margin.left - margin.right,
         height = 650  - margin.top  - margin.bottom;
 
-
     var svg = d3.select("#xyz")
         .attr("width",  width  + margin.left + margin.right)
         .attr("height", height + margin.top  + margin.bottom)
@@ -34,7 +33,6 @@ function creaGrafo (selection){
     legend.append("text")
         .attr("x", 50 - 12)
         .attr("y", 6)
-        //.attr("dy", ".35em")
         .style("text-anchor", "end")
         .attr("fill", "yellow")
         .style("font-size","7pt")
@@ -64,12 +62,11 @@ function creaGrafo (selection){
     (selection.nodes).forEach(function(element) {
         valori.push(element.check_ins);
     })
-    console.log(valori)
     var minmax = d3.extent(valori);
-    console.log(minmax);
     var nodeScale = d3.scaleLinear()
         .range(nodeSizeRange)
         .domain(minmax);
+
     var legenda = svg.append("g")
         .attr("transform","translate(190 ,170)")
         .append("text")
@@ -215,7 +212,6 @@ function updateGrafo (dati, data2){
         valori.push(element.check_ins);
     })
     var minmax = d3.extent(valori);
-    console.log(minmax);
     var nodeScale = d3.scaleLinear()
         .range(nodeSizeRange)
         .domain(minmax);

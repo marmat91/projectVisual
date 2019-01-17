@@ -15,7 +15,6 @@ function app (){
 var i=0;
 function me (){
     d3.json("data/graph.json", function(data) {
-    console.log(data);
         d3.json("data/dati_mese.json", function(data1) {
             d3.json("data/dati_mese_giorno.json", function (data2){
                 console.log(data2)
@@ -23,6 +22,7 @@ function me (){
                 createToolbar2(data, data1, data2)
                 creaGrafo(data)
                 creaLinechart(data2, data1)
+                bolle(data, data2)
             })
         })
     })
