@@ -22,7 +22,6 @@ function me (){
                 createToolbar(data, data1, data2)
                 createToolbar2(data, data1, data2)
                 creaGrafo(data)
-                creaBarre(data, data2)
                 creaLinechart(data2, data1)
             })
         })

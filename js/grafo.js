@@ -127,10 +127,10 @@ function creaGrafo (selection){
                 console.log($(this).attr("key"));
                 d3.select("#xyz")
                     .selectAll("."+$(this).attr("key"))
-                    .attr('stroke-width', 0.2);
+                    .attr('stroke-width', 0.4);
                 d3.select("#xyz")
                     .selectAll("#"+$(this).attr("key"))
-                    .attr('stroke-width', 0.2);
+                    .attr('stroke-width', 0.4);
                 })
             .on("mouseout", function(d) {
                 d3.select("#xyz")
@@ -196,7 +196,7 @@ function updateGrafo (dati, data2){
         .data(dati.links)
         .enter()
         .append('line')
-        .attr('stroke-width', 0.2)
+        .attr('stroke-width', 0.0)
         .attr('stroke', '#E5E5E5');
 
     var node = svg.append("g")
@@ -277,10 +277,10 @@ function updateGrafo (dati, data2){
                 console.log($(this).attr("key"));
                 d3.select("#xyz")
                     .selectAll("."+$(this).attr("key"))
-                    .attr('stroke-width', 0.2);
+                    .attr('stroke-width', 0.4);
                 d3.select("#xyz")
                     .selectAll("#"+$(this).attr("key"))
-                    .attr('stroke-width', 0.2);
+                    .attr('stroke-width', 0.4);
             })
             .on("mouseout", function(d) {
                 d3.select("#xyz")
