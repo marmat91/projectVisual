@@ -2,8 +2,24 @@
 function upLinechart (data2, mese_a, data1){
     console.log("SEI NELL UP");
     d3.select("#ch").selectAll("g").remove();
+    var n_giorni=0;
+    var cf	=	crossfilter(data2);
+    var cartype = cf.dimension(function(d) { return d.cartype; });
+    cartype.filterExact(tutti[3].key);
+    var datiUpVei = cf.dimension(function(d) {return d.meseanno;});
+    datiUpVei.filterExact(mese_a);
+    var datiUpGiorno = cf.dimension(function(d) {return d.giorno;});
+    var datiUpV= datiUpGiorno.group().reduceSum(function(d) { return d.n; }),
+        datiUpGroup=datiUpV.all();
+    console.log(datiUpGroup)
+    for (i = 0; i < datiUpGroup.length; i++) {
+        if (datiUpGroup[i].value>0){
+        n_giorni= n_giorni+1;
+        }
+    }
+    console.log(n_giorni);
     a=[]; //nello switch gli assegno i valori
-    for (j = 0; j<7;j++){
+    for (j = 1; j<7;j++){
         var cf	=	crossfilter(data2);
         var cartype = cf.dimension(function(d) { return d.cartype; });
         cartype.filterExact(tutti[j].key);
@@ -12,42 +28,40 @@ function upLinechart (data2, mese_a, data1){
         var datiUpGiorno = cf.dimension(function(d) {return d.giorno;});
         var datiUpV= datiUpGiorno.group().reduceSum(function(d) { return d.n; }),
             datiUpGroup=datiUpV.all();
-        console.log(datiUpGroup)
 
         switch (j) {
             case 1:
-                for (i = 0; i < datiUpGroup.length; i++) {
+                for (i = 0; i < n_giorni; i++) {
                     a[i]=({quarter:datiUpGroup[i].key, "Auto a 2 assi (o moto)":datiUpGroup[i].value});
-                    //Object.assign(a[i], {"Auto a 2 assi (o moto)": datiUpGroup[i].value});
                 }
                 break;
             case 2:
-                for (i = 0; i < datiUpGroup.length; i++) {
+                for (i = 0; i < n_giorni; i++) {
                     Object.assign(a[i], {"Camion a 2 assi": datiUpGroup[i].value});
                 }
                 break;
             case 3:
-                for (i = 0; i < datiUpGroup.length; i++) {
+                for (i = 0; i < n_giorni; i++) {
                     Object.assign(a[i], {"Camion a 2 assi del parco": datiUpGroup[i].value});
                 }
                 break;
             case 4:
-                for (i = 0; i < datiUpGroup.length; i++) {
+                for (i = 0; i < n_giorni; i++) {
                     Object.assign(a[i], {"Camion a 3 assi": datiUpGroup[i].value});
                 }
                 break;
             case 5:
-                for (i = 0; i < datiUpGroup.length; i++) {
+                for (i = 0; i < n_giorni; i++) {
                     Object.assign(a[i], {"Camion 4 assi o superiore": datiUpGroup[i].value});
                 }
                 break;
             case 6:
-                for (i = 0; i < datiUpGroup.length; i++) {
+                for (i = 0; i < n_giorni; i++) {
                     Object.assign(a[i], {"Bus a 2 assi": datiUpGroup[i].value});
                 }
                 break;
             case 7:
-                for (i = 0; i < datiUpGroup.length; i++) {
+                for (i = 0; i < n_giorni; i++) {
                     Object.assign(a[i], {"Bus a 3 assi": datiUpGroup[i].value});
                 }
 
@@ -56,7 +70,7 @@ function upLinechart (data2, mese_a, data1){
     }
     data=a;
 
-    var margin = {top: 20, right: 55, bottom: 30, left: 40},
+    var margin = {top: 20, right: 100, bottom: 30, left: 40},
         width  = 1000 - margin.left - margin.right,
         height = 500  - margin.top  - margin.bottom;
 
@@ -100,7 +114,7 @@ function upLinechart (data2, mese_a, data1){
         };
     });
 
-    x.domain(data.map(function (d) { console.log(d); return d.quarter; })); //E
+    x.domain(data.map(function (d) { console.log(d); return d.quarter;})); //E
     y.domain([
         d3.min(seriesData, function (c) {
             return d3.min(c.values, function (d) { return d.value; });
@@ -154,7 +168,7 @@ function upLinechart (data2, mese_a, data1){
         .data(varNames.slice().reverse())
         .enter().append("g")
         .attr("class", "legend")
-        .attr("transform", function (d, i) { return "translate(55," + i * 20 + ")"; });
+        .attr("transform", function (d, i) { return "translate(100," + i * 20 + ")"; });
     legend.append("rect")
         .attr("x", width - 10)
         .attr("width", 10)

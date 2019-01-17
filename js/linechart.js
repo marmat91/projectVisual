@@ -2,7 +2,6 @@ function creaLinechart (data2, data1){
     d3.select("#chBut").selectAll("g").remove();
     a=[]; //nello switch gli assegno i valori
     for (j = 0; j<7;j++){
-        console.log(tutti[j].key);
         var cf	=	crossfilter(data1);
         var cartype = cf.dimension(function(d) { return d.cartype; });
         cartype.filterExact(tutti[j].key);
@@ -51,7 +50,7 @@ function creaLinechart (data2, data1){
     }
     data=a;
 
-    var margin = {top: 20, right: 55, bottom: 30, left: 40},
+    var margin = {top: 20, right: 100, bottom: 30, left: 40},
         width  = 1000 - margin.left - margin.right,
         height = 500  - margin.top  - margin.bottom;
 
@@ -78,7 +77,6 @@ function creaLinechart (data2, data1){
         .x(function (d) { return x(d.label) + x.bandwidth() / 2; })
         .y(function (d) { return y(d.value); })
         .curve(d3.curveCardinal);
-    ;
 
     var labelVar = 'quarter'; //A
 
@@ -158,7 +156,7 @@ function creaLinechart (data2, data1){
         .enter().append("g")
         .attr("class", "legend")
         .attr("transform", function (d, i) {
-            return "translate(55," + i * 20 + ")"; });
+            return "translate(100," + i * 20 + ")"; });
     legend.append("rect")
         .attr("x", width - 10)
         .attr("width", 10)
