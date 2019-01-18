@@ -32,7 +32,7 @@
         <a href="#" class="w3-bar-item w3-button">HOME</a>
         <a href="#mappa" class="w3-bar-item w3-button">MAPPA</a>
         <a href="#linee" class="w3-bar-item w3-button">GRAFICO A LINEE</a>
-        <a href="#chart" class="w3-bar-item w3-button">LINEE</a>
+        <a href="#bolle" class="w3-bar-item w3-button">BOLLE</a>
     </div>
 </div>
 
@@ -78,10 +78,25 @@
 </div>
 
 <!-- ultimo spazio -->
-<div id="chart" >
-    <div class="w3-content">
+<div id="bolle" style="height:800px;">
+    <div>
+    <div class="w3-content" style="float: left">
     <svg id="graf">
     </svg>
+    </div>
+    <span style="float: right; padding-top:64px; padding-right:64px;">
+            <div id="toolbarB">
+            </div>
+            <br/>
+            <div id="toolbar2B"></div>
+            <br/>
+            <div >
+                <label style="font-size: 26pt">Seleziona il giorno:</label>
+                <br/>
+                <select id="toolbar3B">
+                </select>
+            </div>
+        </span>
     </div>
 </div>
 

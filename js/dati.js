@@ -18,11 +18,13 @@ function me (){
         d3.json("data/dati_mese.json", function(data1) {
             d3.json("data/dati_mese_giorno.json", function (data2){
                 console.log(data2)
-                createToolbar(data, data1, data2)
-                createToolbar2(data, data1, data2)
+                creaSelettoreVeicolo(data, data1, data2)
+                creaSelettoreDate(data, data1, data2)
+                creaSelettoreVeicoloB(data, data1, data2)
+                creaSelettoreDateB(data, data1, data2)
                 creaGrafo(data)
                 creaLinechart(data2, data1)
-                bolle(data, data2)
+                bolle(data, data2, data1)
             })
         })
     })
@@ -54,7 +56,7 @@ function createToolbar(data, data1, data2) {
         })
 }
 */
-function createToolbar(data, data1, data2) {
+function creaSelettoreVeicolo(data, data1, data2) {
     //SELEZIONE DEI VEICOLI
     toolbar.append("label")
         .attr("style", "font-size: 18pt")
@@ -92,8 +94,8 @@ function createToolbar(data, data1, data2) {
 
 var date_all =['tutte',
     '2015-05','2015-06','2015-07','2015-08','2015-09','2015-10','2015-11','2015-12','2016-01','2016-02','2016-03','2016-04','2016-05']
-function createToolbar2(data, data1, data2) {
-    createToolbar3(data, data1, data2)
+function creaSelettoreDate(data, data1, data2) {
+    creaSelettoreDateSpec(data, data2)
     //SELETTORE PER LE DATE mese e anno
     var cf	=	crossfilter(data1);
     var dateT = cf.dimension(function(d){return d.meseanno});
@@ -109,7 +111,7 @@ function createToolbar2(data, data1, data2) {
             mese_anno=this.value;
             giorno='Tutti i giorni'
             updateGrafo(data, data2)
-            createToolbar3(data, data2)
+            creaSelettoreDateSpec(data, data2)
         })
         .attr('name','selettore')
         .selectAll("option")
@@ -123,49 +125,47 @@ function createToolbar2(data, data1, data2) {
 }
 
 
-    function createToolbar3(data, data2) {
-        //SELETTORE PER LE DATE giorni
-        toolbar3.selectAll("option").remove();
+function creaSelettoreDateSpec(data, data2) {
+    //SELETTORE PER LE DATE giorni
+    toolbar3.selectAll("option").remove();
 
-        if (mese_anno=='tutte'){
-            var date=([{key:'Seleziona un mese'}])
-        }
-        else {
-            var cf	=	crossfilter(data2);
-            var prov = cf.dimension(function(d) { return d.meseanno; });
-            prov.filterExact(mese_anno);
-            var dateT = cf.dimension(function(d){return d.giorno});
-            var appoggio=dateT.group().all();
-            var date=([{key:'Tutti i giorni'}])
-            for (i = 0; i < appoggio.length; i++) {
-                if (appoggio[i].value!=0){
-                    date.push(appoggio[i])
-                }
-
-            }
-
-            console.log (appoggio[0]);
-            console.log (Object.values(date));
-        }
-
-        var tbYear = toolbar3
-            .on('change',function(d) {
-                giorno=this.value;
-                console.log(mese_anno);
-                console.log(giorno);
-                updateGrafo(data, data2)
-
-            })
-            .attr('name','selettore')
-            .selectAll("option")
-            .data(date)
-            .enter()
-            .append("option")
-            .attr('style', 'width:100px; height:30px; font-size: 14pt; font-weight: bold')
-            .text(function(d) {
-                return d.key
-            });
+    if (mese_anno=='tutte'){
+        var date=([{key:'Seleziona un mese'}])
     }
+    else {
+        var cf	=	crossfilter(data2);
+        var prov = cf.dimension(function(d) { return d.meseanno; });
+        prov.filterExact(mese_anno);
+        var dateT = cf.dimension(function(d){return d.giorno});
+        var appoggio=dateT.group().all();
+        var date=([{key:'Tutti i giorni'}])
+        for (i = 0; i < appoggio.length; i++) {
+            if (appoggio[i].value!=0){
+                date.push(appoggio[i])
+            }
+        }
+        console.log (appoggio[0]);
+        console.log (Object.values(date));
+    }
+
+    var tbYear = toolbar3
+        .on('change',function(d) {
+            giorno=this.value;
+            console.log(mese_anno);
+            console.log(giorno);
+            updateGrafo(data, data2)
+
+        })
+        .attr('name','selettore')
+        .selectAll("option")
+        .data(date)
+        .enter()
+        .append("option")
+        .attr('style', 'width:100px; height:30px; font-size: 14pt; font-weight: bold')
+        .text(function(d) {
+            return d.key
+        });
+}
 
  me();
 }

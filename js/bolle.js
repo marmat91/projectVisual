@@ -1,10 +1,29 @@
-function bolle (data, data2){
-    console.log(colori_base.length)
-    console.log(colori_base[0].value)
+function bolle (data, data2, data1){
+    d3.select("#bolle").selectAll("g").remove();
+    var legend = d3.select("#graf").append("g")
+        .attr("transform",  "translate(700,100)" )
+        .selectAll(".legend")
+        .data(colori_base)
+        .enter()
+        .append("g")
+        .attr("class", "legend")
+        .attr("transform", function (d, i) {  console.log(d); return "translate(1," + i * 20 + ")"; });
+    legend.append("circle")
+        .attr("cx", 50)
+        .attr("cy", 6)
+        .attr("r", 6)
+        .style("fill", function (d) {return d.value; });
+    legend.append("text")
+        .attr("x", 38)
+        .attr("y", 6)
+        .style("text-anchor", "end")
+        .attr("fill", "black")
+        .attr("dy", ".35em")
+        //.style("font-size","7pt")
+        .text(function (d) { return d.key; });
 
     var width = 960,
-        height = 650,
-        maxRadius = 12;
+        height = 650
 
     var n = data.nodes.length, // total number of circles
         m = colori_base.length; // number of distinct clusters
@@ -23,7 +42,7 @@ function bolle (data, data2){
             }
         }
     })
-    var nodeSizeRange = [5, 50];
+    var nodeSizeRange = [15, 55];
     var valori =[];
     (data.nodes).forEach(function(element) {
         valori.push(element.check_ins);
@@ -48,14 +67,14 @@ function bolle (data, data2){
             c=data.nodes[k].color,
             cc=data.nodes[k].key,
             n=data.nodes[k].check_ins;
-            d = {cluster: i, radius: r, color:c, id_c:cc, n:n};
+        d = {cluster: i, radius: r, color:c, id_c:cc, n:n};
         if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
         k=k+1;
         return d;
     });
 
     var forceCollide = d3.forceCollide()
-        .radius(function(d) { return d.radius + 1.5; })
+        .radius(function(d) { return d.radius + 10; })
         .iterations(1);
 
     var force = d3.forceSimulation()
@@ -74,21 +93,26 @@ function bolle (data, data2){
         .append('g')
         .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
 
-    var circle = svg2.selectAll("circle")
+    var circle_all = svg2.selectAll("my circle")
         .data(nodes)
-        .enter().append("circle")
+
+    var elemEnter = circle_all.enter()
+        .append("g")
+
+    var circle=elemEnter.append("circle")
         .attr("r", function(d) { return d.radius; })
         .style("fill", function(d) {  return d.color;})
+        .attr("opacity", 0.75)
 
     //    TODO: Update for v4
     //    .call(force.drag);
 
     function tick() {
-        circle
-            .attr("cx", function(d) { return d.x; })
-            .attr("cy", function(d) { return d.y; })
-            .append("title")
-            .text(function(d) { return  "cluster gate: "+d.cluster +", \ngate: " + d.id_c + ", \nn° veicoli: " + d.n ;});
+        elemEnter
+            .attr("transform","translate(190 ,170)")
+            .attr("transform", function(d){return "translate("+d.x+","+d.y+")"})
+        //.attr("x", function(d) { return d.x; })
+        //.attr("y", function(d) { return d.y; })
     }
 
     function forceCluster(alpha) {
@@ -99,4 +123,137 @@ function bolle (data, data2){
             node.vy -= (node.y - cluster.y) * k;
         }
     }
+
+    //metto i titoli e legenda a ogni bolla
+    elemEnter.append("text")
+        .style("font-size","14pt")
+        .attr("dx", function(d){return -0.7*d.radius})
+        .text(function(d) { return d.id_c ;})
+
+    circle.append("title")
+        .text(function(d) { return  "cluster gate: "+d.cluster +", \ngate: " + d.id_c + ", \nn° veicoli: " + d.n ;})
+
+
+}
+
+function creaSelettoreVeicoloB(data, data1, data2) {
+    //SELEZIONE DEI VEICOLI
+    d3.select("#toolbarB")
+        .style('padding-top','64px')
+        .append("label")
+        .attr("style", "font-size: 26pt")
+        .text("Seleziona il tipo di veicolo:")
+        .append("br");
+
+    var labels = d3.select("#toolbarB").append("select")
+        .attr('id','selettore')
+        .style("font-size","20pt")
+        .style("width","300px")
+        .style("height","40px")
+        .on('change',function(d) {
+            console.log("click veicolo ", this.value);
+            for (i = 0; i < tutti.length; i++) {
+                if (this.value==tutti[i].value){
+                    tipo_veicolo=tutti[i].key;
+                    vei=tutti[i].value;
+                }
+            };
+            bolle(data, data2)
+        })
+        .selectAll("option")
+        .data(tutti)
+        .enter()
+        .append("option")
+        .attr('name', (function(d) {
+            return d.key
+        }))
+        .attr('style', 'width:100px; height:30px; font-size: 18pt; font-weight: bold')
+        .text(function(d) {
+            let id = d.key;
+            return d.value
+        })
+    ;
+
+
+}
+
+var date_all =['tutte',
+    '2015-05','2015-06','2015-07','2015-08','2015-09','2015-10','2015-11','2015-12','2016-01','2016-02','2016-03','2016-04','2016-05']
+function creaSelettoreDateB(data, data1, data2) {
+    creaSelettoreDateSpecB(data, data2)
+    //SELETTORE PER LE DATE mese e anno
+    var cf	=	crossfilter(data1);
+    var dateT = cf.dimension(function(d){return d.meseanno});
+    var date = dateT.group().all();
+    let toolbar2 = d3.select("#toolbar2B");
+    toolbar2.append("label")
+        .attr("style", "font-size: 26pt")
+        .text("Seleziona la data:")
+        .append("br");
+
+    var tbYear = toolbar2.append("select")
+        .style("font-size","20pt")
+        .style("width","300px")
+        .style("height","40px")
+        .on('change',function(d) {
+            mese_anno=this.value;
+            giorno='Tutti i giorni'
+            bolle(data, data2)
+            creaSelettoreDateSpecB(data, data2)
+        })
+        .attr('name','selettore')
+        .selectAll("option")
+        .data(date_all)
+        .enter()
+        .append("option")
+        .attr('style', 'width:100px; height:30px; font-size: 18pt; font-weight: bold')
+        .text(function(d) {
+            return d
+        });
+}
+
+
+function creaSelettoreDateSpecB(data, data2) {
+    //SELETTORE PER LE DATE giorni
+    d3.select("#toolbar3B").selectAll("option").remove();
+
+    if (mese_anno=='tutte'){
+        var date=([{key:'Seleziona un mese'}])
+    }
+    else {
+        var cf	=	crossfilter(data2);
+        var prov = cf.dimension(function(d) { return d.meseanno; });
+        prov.filterExact(mese_anno);
+        var dateT = cf.dimension(function(d){return d.giorno});
+        var appoggio=dateT.group().all();
+        var date=([{key:'Tutti i giorni'}])
+        for (i = 0; i < appoggio.length; i++) {
+            if (appoggio[i].value!=0){
+                date.push(appoggio[i])
+            }
+        }
+        console.log (appoggio[0]);
+        console.log (Object.values(date));
+    }
+
+    var tbYear = d3.select("#toolbar3B")
+        .style("font-size","20pt")
+        .style("width","300px")
+        .style("height","40px")
+        .on('change',function(d) {
+            giorno=this.value;
+            console.log(mese_anno);
+            console.log(giorno);
+            bolle(data, data2)
+
+        })
+        .attr('name','selettore')
+        .selectAll("option")
+        .data(date)
+        .enter()
+        .append("option")
+        .attr('style', 'width:100px; height:30px; font-size: 18pt; font-weight: bold')
+        .text(function(d) {
+            return d.key
+        });
 }
