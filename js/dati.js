@@ -2,6 +2,11 @@ let mese_anno='tutte';
 let tipo_veicolo='tutti';
 let giorno='Tutti i giorni';
 let vei='Tutti';
+
+let mese_annoB='tutte';
+let tipo_veicoloB='tutti';
+let giornoB='Tutti i giorni';
+let veiB='Tutti';
 let tutti =[
     {key:"tutti", value:"Tutti"},
     {key:"1",value:"Auto a 2 assi (o moto)"},
@@ -17,14 +22,15 @@ function me (){
     d3.json("data/graph.json", function(data) {
         d3.json("data/dati_mese.json", function(data1) {
             d3.json("data/dati_mese_giorno.json", function (data2){
-                console.log(data2)
-                creaSelettoreVeicolo(data, data1, data2)
-                creaSelettoreDate(data, data1, data2)
-                creaSelettoreVeicoloB(data, data1, data2)
-                creaSelettoreDateB(data, data1, data2)
-                creaGrafo(data)
-                creaLinechart(data2, data1)
-                bolle(data, data2, data1)
+                d3.json("data/percorsi.json", function (data3) {
+                    creaSelettoreVeicolo(data, data1, data2)
+                    creaSelettoreDate(data, data1, data2)
+                    creaSelettoreVeicoloB(data, data1, data2, data3)
+                    creaSelettoreDateB(data, data1, data2, data3)
+                    creaGrafo(data, data2)
+                    creaLinechart(data2, data1)
+                    bolle(data, data2, data1, data3)
+                })
             })
         })
     })

@@ -5,8 +5,22 @@ let colori_base = [
     {key:"gate", value:"crimson"},
     {key:"camping", value:"sandybrown"},
     {key:"ranger-base", value:"fuchsia"}];
-function creaGrafo (selection){
-    console.log(selection);
+function creaGrafo (selection, data2){
+    var cf	=	crossfilter(data2);
+    var datiUpVei = cf.dimension(function(d) {return d.gatename;});
+    var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
+        datiUpGroup=datiUpV.all();
+    console.log (datiUpGroup);
+
+    //cambio i valori di check_ins con quelli aggiornati
+    datiUpGroup.forEach(function(element) {
+        for (i = 0; i < selection.nodes.length; i++) {
+            if (selection.nodes[i]["key"]==element.key){
+                selection.nodes[i]["check_ins"]=element.value;
+            }
+        }
+    })
+
     var margin = {top: 0, right: 0, bottom: 0, left: 0},
         width  = 650 - margin.left - margin.right,
         height = 650  - margin.top  - margin.bottom;
@@ -62,6 +76,7 @@ function creaGrafo (selection){
     (selection.nodes).forEach(function(element) {
         valori.push(element.check_ins);
     })
+    console.log(valori)
     var minmax = d3.extent(valori);
     var nodeScale = d3.scaleLinear()
         .range(nodeSizeRange)
@@ -158,9 +173,6 @@ function updateGrafo (dati, data2){
         .attr("fill", "yellow")
         .style("font-size","7pt")
         .text(function (d) { return d.key; });
-
-    console.log (mese_anno);
-    console.log (tipo_veicolo);
 
     if (mese_anno!='tutte'){
     var prov = cf.dimension(function(d) { return d.meseanno; });

@@ -1,4 +1,7 @@
-function bolle (data, data2, data1){
+let dettaglio_o_no=0
+function bolle (data, data2, data1, data3){
+    dettaglio_o_no=0
+    console.log(data3)
     d3.select("#bolle").selectAll("g").remove();
     var legend = d3.select("#graf").append("g")
         .attr("transform",  "translate(700,100)" )
@@ -29,6 +32,18 @@ function bolle (data, data2, data1){
         m = colori_base.length; // number of distinct clusters
 
     var cf	=	crossfilter(data2);
+    if (mese_annoB!='tutte'){
+        var prov = cf.dimension(function(d) { return d.meseanno; });
+        prov.filterExact(mese_annoB);
+    }
+    if (giornoB!='Tutti i giorni'){
+        var prov = cf.dimension(function(d) { return d.giorno; });
+        prov.filterExact(giornoB);
+    }
+    if (tipo_veicoloB!='tutti'){
+        var cartype = cf.dimension(function(d) { return d.cartype; });
+        cartype.filterExact(tipo_veicoloB);
+    }
     var datiUpVei = cf.dimension(function(d) {return d.gatename;});
     var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
         datiUpGroup=datiUpV.all();
@@ -42,7 +57,7 @@ function bolle (data, data2, data1){
             }
         }
     })
-    var nodeSizeRange = [15, 55];
+    var nodeSizeRange = [15, 40];
     var valori =[];
     (data.nodes).forEach(function(element) {
         valori.push(element.check_ins);
@@ -74,7 +89,7 @@ function bolle (data, data2, data1){
     });
 
     var forceCollide = d3.forceCollide()
-        .radius(function(d) { return d.radius + 10; })
+        .radius(function(d) { return d.radius + 7; })
         .iterations(1);
 
     var force = d3.forceSimulation()
@@ -90,8 +105,9 @@ function bolle (data, data2, data1){
     var svg2 = d3.select("#graf")
         .attr("width", width)
         .attr("height", height)
+        .style("padding-top","50px")
         .append('g')
-        .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+        .attr('transform', 'translate(' + width / 3 + ',' + 280 + ')');
 
     var circle_all = svg2.selectAll("my circle")
         .data(nodes)
@@ -103,9 +119,11 @@ function bolle (data, data2, data1){
         .attr("r", function(d) { return d.radius; })
         .style("fill", function(d) {  return d.color;})
         .attr("opacity", 0.75)
+        .on("click", function(d) {
+            var gate_sele=d.id_c;
+            bolle_dettaglio(data, data2, data1, gate_sele, data3)
+        })
 
-    //    TODO: Update for v4
-    //    .call(force.drag);
 
     function tick() {
         elemEnter
@@ -126,8 +144,10 @@ function bolle (data, data2, data1){
 
     //metto i titoli e legenda a ogni bolla
     elemEnter.append("text")
-        .style("font-size","14pt")
-        .attr("dx", function(d){return -0.7*d.radius})
+        .style("font-size",function(d) { return d.radius*0.4 + "pt"; })
+        .style("font-weight","bold")
+        //.attr("dx", function(d){return (-1*d.radius)+((d.id_c.length*-1)+15)})
+        .attr("dx", function(d){return (-1*d.radius)+(((d.id_c.length-13)*-1.2)*(d.radius/20))})
         .text(function(d) { return d.id_c ;})
 
     circle.append("title")
@@ -136,7 +156,7 @@ function bolle (data, data2, data1){
 
 }
 
-function creaSelettoreVeicoloB(data, data1, data2) {
+function creaSelettoreVeicoloB(data, data1, data2, data3) {
     //SELEZIONE DEI VEICOLI
     d3.select("#toolbarB")
         .style('padding-top','64px')
@@ -151,14 +171,18 @@ function creaSelettoreVeicoloB(data, data1, data2) {
         .style("width","300px")
         .style("height","40px")
         .on('change',function(d) {
-            console.log("click veicolo ", this.value);
             for (i = 0; i < tutti.length; i++) {
                 if (this.value==tutti[i].value){
-                    tipo_veicolo=tutti[i].key;
-                    vei=tutti[i].value;
+                    tipo_veicoloB=tutti[i].key;
+                    veiB=tutti[i].value;
                 }
             };
-            bolle(data, data2)
+            if (dettaglio_o_no==1){
+                bolle_dettaglio(data, data2, data1, gate_sel_bolle, data3)
+            }
+            else{
+                bolle(data, data2, data1, data3)
+            }
         })
         .selectAll("option")
         .data(tutti)
@@ -179,8 +203,8 @@ function creaSelettoreVeicoloB(data, data1, data2) {
 
 var date_all =['tutte',
     '2015-05','2015-06','2015-07','2015-08','2015-09','2015-10','2015-11','2015-12','2016-01','2016-02','2016-03','2016-04','2016-05']
-function creaSelettoreDateB(data, data1, data2) {
-    creaSelettoreDateSpecB(data, data2)
+function creaSelettoreDateB(data, data1, data2, data3) {
+    creaSelettoreDateSpecB(data, data2, data1, data3)
     //SELETTORE PER LE DATE mese e anno
     var cf	=	crossfilter(data1);
     var dateT = cf.dimension(function(d){return d.meseanno});
@@ -196,10 +220,15 @@ function creaSelettoreDateB(data, data1, data2) {
         .style("width","300px")
         .style("height","40px")
         .on('change',function(d) {
-            mese_anno=this.value;
-            giorno='Tutti i giorni'
-            bolle(data, data2)
-            creaSelettoreDateSpecB(data, data2)
+            mese_annoB=this.value;
+            giornoB='Tutti i giorni'
+            if (dettaglio_o_no==1){
+                bolle_dettaglio(data, data2, data1, gate_sel_bolle, data3)
+            }
+            else{
+                bolle(data, data2, data1, data3)
+            }
+            creaSelettoreDateSpecB(data, data2, data1, data3)
         })
         .attr('name','selettore')
         .selectAll("option")
@@ -213,17 +242,17 @@ function creaSelettoreDateB(data, data1, data2) {
 }
 
 
-function creaSelettoreDateSpecB(data, data2) {
+function creaSelettoreDateSpecB(data, data2, data1, data3) {
     //SELETTORE PER LE DATE giorni
     d3.select("#toolbar3B").selectAll("option").remove();
 
-    if (mese_anno=='tutte'){
+    if (mese_annoB=='tutte'){
         var date=([{key:'Seleziona un mese'}])
     }
     else {
         var cf	=	crossfilter(data2);
         var prov = cf.dimension(function(d) { return d.meseanno; });
-        prov.filterExact(mese_anno);
+        prov.filterExact(mese_annoB);
         var dateT = cf.dimension(function(d){return d.giorno});
         var appoggio=dateT.group().all();
         var date=([{key:'Tutti i giorni'}])
@@ -241,10 +270,13 @@ function creaSelettoreDateSpecB(data, data2) {
         .style("width","300px")
         .style("height","40px")
         .on('change',function(d) {
-            giorno=this.value;
-            console.log(mese_anno);
-            console.log(giorno);
-            bolle(data, data2)
+            giornoB=this.value;
+            if (dettaglio_o_no==1){
+                bolle_dettaglio(data, data2, data1, gate_sel_bolle, data3)
+            }
+            else{
+                bolle(data, data2, data1, data3)
+            }
 
         })
         .attr('name','selettore')

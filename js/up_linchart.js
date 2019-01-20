@@ -192,7 +192,7 @@ function upLinechart (data2, mese_a, data1){
             creaLinechart(data2,data1)
         });
 
-    var indietro = d3.select("#chBut")
+    var indietro_anno = d3.select("#chBut")
         .append("g")
         .style("font-size","20pt")
         .text("Anno-mese selezionato: "+mese_a);
