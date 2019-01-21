@@ -284,1368 +284,2618 @@
     ],
     "links": [
         {
-            "source": "general-gate0",
-            "target": "general-gate5"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
-            "source": "general-gate0",
-            "target": "entrance2"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
-            "source": "general-gate0",
-            "target": "gate5"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
-            "source": "general-gate0",
-            "target": "entrance4"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
-            "source": "general-gate0",
-            "target": "gate8"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
-            "source": "general-gate0",
-            "target": "camping8"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
-            "source": "general-gate0",
-            "target": "general-gate6"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
-            "source": "general-gate0",
-            "target": "gate4"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
-            "source": "general-gate0",
-            "target": "general-gate3"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
-            "source": "general-gate0",
-            "target": "camping2"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
-            "source": "general-gate0",
-            "target": "general-gate2"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
-            "source": "general-gate0",
-            "target": "gate3"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
-            "source": "general-gate0",
-            "target": "camping1"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
-            "source": "general-gate0",
-            "target": "general-gate0"
+            "source": "general-gate0","Sxpos": 110,
+            "Sypos": 9,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
-            "source": "entrance0",
-            "target": "general-gate1"
+            "source": "entrance0","Sxpos": 62,
+            "Sypos": 13,
+            "target": "general-gate1","Txpos": 64,
+            "Typos": 25
         },
         {
-            "source": "entrance0",
-            "target": "gate0"
+            "source": "entrance0","Sxpos": 62,
+            "Sypos": 13,
+            "target": "gate0","Txpos": 63,
+            "Typos": 33
         },
         {
-            "source": "entrance0",
-            "target": "gate6"
+            "source": "entrance0","Sxpos": 62,
+            "Sypos": 13,
+            "target": "gate6",
+            "Txpos": 116,
+            "Typos": 151
         },
         {
-            "source": "entrance0",
-            "target": "entrance3"
+            "source": "entrance0","Sxpos": 62,
+            "Sypos": 13,
+            "target": "entrance3",
+            "Txpos": 115,
+            "Typos": 167
         },
         {
-            "source": "entrance0",
-            "target": "general-gate4"
+            "source": "entrance0","Sxpos": 62,
+            "Sypos": 13,
+            "target": "general-gate4",
+            "Txpos": 69,
+            "Typos": 98
         },
         {
-            "source": "entrance0",
-            "target": "gate7"
+            "source": "entrance0","Sxpos": 62,
+            "Sypos": 13,
+            "target": "gate7",
+            "Txpos": 97,
+            "Typos": 160
         },
         {
-            "source": "entrance0",
-            "target": "general-gate7"
+            "source": "entrance0","Sxpos": 62,
+            "Sypos": 13,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
-            "source": "ranger-stop0",
-            "target": "general-gate2"
+            "source": "ranger-stop0","Sxpos": 89,
+            "Sypos": 16,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
-            "source": "ranger-stop0",
-            "target": "ranger-stop2"
+            "source": "ranger-stop0","Sxpos": 89,
+            "Sypos": 16,
+            "target": "ranger-stop2","Txpos": 80,
+            "Typos": 35
         },
         {
-            "source": "ranger-stop1",
-            "target": "gate2"
+            "source": "ranger-stop1","Sxpos": 19,
+            "Sypos": 24,
+            "target": "gate2",
+            "Txpos": 24,
+            "Typos": 54
         },
         {
-            "source": "general-gate1",
-            "target": "ranger-stop2"
+            "source": "general-gate1","Sxpos": 64,
+            "Sypos": 25,
+            "target": "ranger-stop2","Txpos": 80,
+            "Typos": 35
         },
         {
-            "source": "general-gate1",
-            "target": "gate0"
+            "source": "general-gate1","Sxpos": 64,
+            "Sypos": 25,
+            "target": "gate0","Txpos": 63,
+            "Typos": 33
         },
         {
-            "source": "general-gate1",
-            "target": "gate6"
+            "source": "general-gate1","Sxpos": 64,
+            "Sypos": 25,
+            "target": "gate6",
+            "Txpos": 116,
+            "Typos": 151
         },
         {
-            "source": "general-gate1",
-            "target": "entrance3"
+            "source": "general-gate1","Sxpos": 64,
+            "Sypos": 25,
+            "target": "entrance3",
+            "Txpos": 115,
+            "Typos": 167
         },
         {
-            "source": "general-gate1",
-            "target": "general-gate4"
+            "source": "general-gate1","Sxpos": 64,
+            "Sypos": 25,
+            "target": "general-gate4",
+            "Txpos": 69,
+            "Typos": 98
         },
         {
-            "source": "general-gate1",
-            "target": "gate7"
+            "source": "general-gate1","Sxpos": 64,
+            "Sypos": 25,
+            "target": "gate7",
+            "Txpos": 97,
+            "Typos": 160
         },
         {
-            "source": "general-gate1",
-            "target": "general-gate7"
+            "source": "general-gate1","Sxpos": 64,
+            "Sypos": 25,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
-            "source": "general-gate1",
-            "target": "entrance0"
+            "source": "general-gate1","Sxpos": 64,
+            "Sypos": 25,
+            "target": "entrance0","Txpos": 62,
+            "Typos": 13
         },
         {
-            "source": "general-gate2",
-            "target": "general-gate0"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
-            "source": "general-gate2",
-            "target": "general-gate5"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
-            "source": "general-gate2",
-            "target": "entrance2"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
-            "source": "general-gate2",
-            "target": "gate5"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
-            "source": "general-gate2",
-            "target": "entrance4"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
-            "source": "general-gate2",
-            "target": "gate8"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
-            "source": "general-gate2",
-            "target": "camping8"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
-            "source": "general-gate2",
-            "target": "general-gate6"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
-            "source": "general-gate2",
-            "target": "gate4"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
-            "source": "general-gate2",
-            "target": "general-gate3"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
-            "source": "general-gate2",
-            "target": "camping2"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
-            "source": "general-gate2",
-            "target": "general-gate2"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
-            "source": "general-gate2",
-            "target": "gate3"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
-            "source": "general-gate2",
-            "target": "camping1"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
-            "source": "general-gate2",
-            "target": "ranger-stop0"
+            "source": "general-gate2","Sxpos": 104,
+            "Sypos": 32,
+            "target": "ranger-stop0","Txpos": 89,
+            "Typos": 16
         },
         {
-            "source": "gate0",
-            "target": "gate1"
+            "source": "gate0","Sxpos": 63,
+            "Sypos": 33,
+            "target": "gate1",
+            "Txpos": 58,
+            "Typos": 44
         },
         {
-            "source": "gate0",
-            "target": "general-gate1"
+            "source": "gate0","Sxpos": 63,
+            "Sypos": 33,
+            "target": "general-gate1","Txpos": 64,
+            "Typos": 25
         },
         {
-            "source": "gate0",
-            "target": "entrance0"
+            "source": "gate0","Sxpos": 63,
+            "Sypos": 33,
+            "target": "entrance0","Txpos": 62,
+            "Typos": 13
         },
         {
-            "source": "gate0",
-            "target": "gate6"
+            "source": "gate0","Sxpos": 63,
+            "Sypos": 33,
+            "target": "gate6",
+            "Txpos": 116,
+            "Typos": 151
         },
         {
-            "source": "gate0",
-            "target": "entrance3"
+            "source": "gate0","Sxpos": 63,
+            "Sypos": 33,
+            "target": "entrance3",
+            "Txpos": 115,
+            "Typos": 167
         },
         {
-            "source": "gate0",
-            "target": "general-gate4"
+            "source": "gate0","Sxpos": 63,
+            "Sypos": 33,
+            "target": "general-gate4",
+            "Txpos": 69,
+            "Typos": 98
         },
         {
-            "source": "gate0",
-            "target": "gate7"
+            "source": "gate0","Sxpos": 63,
+            "Sypos": 33,
+            "target": "gate7",
+            "Txpos": 97,
+            "Typos": 160
         },
         {
-            "source": "gate0",
-            "target": "general-gate7"
+            "source": "gate0","Sxpos": 63,
+            "Sypos": 33,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
-            "source": "ranger-stop2",
-            "target": "ranger-stop0"
+            "source": "ranger-stop2","Sxpos": 80,
+            "Sypos": 35,
+            "target": "ranger-stop0","Txpos": 89,
+            "Typos": 16
         },
         {
-            "source": "ranger-stop2",
-            "target": "general-gate1"
+            "source": "ranger-stop2","Sxpos": 80,
+            "Sypos": 35,
+            "target": "general-gate1","Txpos": 64,
+            "Typos": 25
         },
         {
             "source": "camping0",
-            "target": "camping0"
+            "Sxpos": 52,
+            "Sypos": 41,
+            "target": "camping0",
+            "Txpos": 52,
+            "Typos": 41
         },
         {
             "source": "camping0",
-            "target": "gate1"
+            "Sxpos": 52,
+            "Sypos": 41,
+            "target": "gate1",
+            "Txpos": 58,
+            "Typos": 44
         },
         {
             "source": "camping0",
-            "target": "general-gate7"
+            "Sxpos": 52,
+            "Sypos": 41,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "camping0",
-            "target": "gate2"
+            "Sxpos": 52,
+            "Sypos": 41,
+            "target": "gate2",
+            "Txpos": 24,
+            "Typos": 54
         },
         {
             "source": "camping0",
-            "target": "camping3"
+            "Sxpos": 52,
+            "Sypos": 41,
+            "target": "camping3",
+            "Txpos": 44,
+            "Typos": 64
         },
         {
             "source": "camping0",
-            "target": "entrance1"
+            "Sxpos": 52,
+            "Sypos": 41,
+            "target": "entrance1",
+            "Txpos": 17,
+            "Typos": 67
         },
         {
             "source": "camping0",
-            "target": "camping5"
+            "Sxpos": 52,
+            "Sypos": 41,
+            "target": "camping5",
+            "Txpos": 48,
+            "Typos": 89
         },
         {
             "source": "camping0",
-            "target": "camping4"
+            "Sxpos": 52,
+            "Sypos": 41,
+            "target": "camping4",
+            "Txpos": 45,
+            "Typos": 68
         },
         {
             "source": "gate1",
-            "target": "gate0"
+            "Sxpos": 58,
+            "Sypos": 44,
+            "target": "gate0","Txpos": 63,
+            "Typos": 33
         },
         {
             "source": "gate1",
-            "target": "general-gate7"
+            "Sxpos": 58,
+            "Sypos": 44,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "gate1",
-            "target": "gate2"
+            "Sxpos": 58,
+            "Sypos": 44,
+            "target": "gate2",
+            "Txpos": 24,
+            "Typos": 54
         },
         {
             "source": "gate1",
-            "target": "camping3"
+            "Sxpos": 58,
+            "Sypos": 44,
+            "target": "camping3",
+            "Txpos": 44,
+            "Typos": 64
         },
         {
             "source": "gate1",
-            "target": "entrance1"
+            "Sxpos": 58,
+            "Sypos": 44,
+            "target": "entrance1",
+            "Txpos": 17,
+            "Typos": 67
         },
         {
             "source": "gate1",
-            "target": "camping5"
+            "Sxpos": 58,
+            "Sypos": 44,
+            "target": "camping5",
+            "Txpos": 48,
+            "Typos": 89
         },
         {
             "source": "gate1",
-            "target": "camping4"
+            "Sxpos": 58,
+            "Sypos": 44,
+            "target": "camping4",
+            "Txpos": 45,
+            "Typos": 68
         },
         {
             "source": "gate1",
-            "target": "camping0"
+            "Sxpos": 58,
+            "Sypos": 44,
+            "target": "camping0",
+            "Txpos": 52,
+            "Typos": 41
         },
         {
             "source": "ranger-stop3",
-            "target": "gate3"
+            "Sxpos": 148,
+            "Sypos": 45,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "camping1",
-            "target": "general-gate3"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "camping1",
-            "target": "general-gate5"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "camping1",
-            "target": "entrance2"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "camping1",
-            "target": "gate5"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "camping1",
-            "target": "entrance4"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "camping1",
-            "target": "gate8"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "camping1",
-            "target": "camping8"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "camping1",
-            "target": "general-gate6"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "camping1",
-            "target": "gate4"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "camping1",
-            "target": "general-gate0"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "camping1",
-            "target": "camping2"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "camping1",
-            "target": "general-gate2"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "camping1",
-            "target": "gate3"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "camping1",
-            "target": "camping1"
+            "Sxpos": 183,
+            "Sypos": 48,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "camping2",
-            "target": "general-gate5"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "camping2",
-            "target": "entrance2"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "camping2",
-            "target": "gate5"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "camping2",
-            "target": "entrance4"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "camping2",
-            "target": "gate8"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "camping2",
-            "target": "camping8"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "camping2",
-            "target": "general-gate6"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "camping2",
-            "target": "gate4"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "camping2",
-            "target": "general-gate3"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "camping2",
-            "target": "camping2"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "camping2",
-            "target": "gate3"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "camping2",
-            "target": "general-gate0"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "camping2",
-            "target": "general-gate2"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "camping2",
-            "target": "camping1"
+            "Sxpos": 129,
+            "Sypos": 50,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "gate2",
-            "target": "general-gate7"
+            "Sxpos": 24,
+            "Sypos": 54,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "gate2",
-            "target": "camping5"
+            "Sxpos": 24,
+            "Sypos": 54,
+            "target": "camping5",
+            "Txpos": 48,
+            "Typos": 89
         },
         {
             "source": "gate2",
-            "target": "gate1"
+            "Sxpos": 24,
+            "Sypos": 54,
+            "target": "gate1",
+            "Txpos": 58,
+            "Typos": 44
         },
         {
             "source": "gate2",
-            "target": "camping0"
+            "Sxpos": 24,
+            "Sypos": 54,
+            "target": "camping0",
+            "Txpos": 52,
+            "Typos": 41
         },
         {
             "source": "gate2",
-            "target": "camping4"
+            "Sxpos": 24,
+            "Sypos": 54,
+            "target": "camping4",
+            "Txpos": 45,
+            "Typos": 68
         },
         {
             "source": "gate2",
-            "target": "entrance1"
+            "Sxpos": 24,
+            "Sypos": 54,
+            "target": "entrance1",
+            "Txpos": 17,
+            "Typos": 67
         },
         {
             "source": "gate2",
-            "target": "camping3"
+            "Sxpos": 24,
+            "Sypos": 54,
+            "target": "camping3",
+            "Txpos": 44,
+            "Typos": 64
         },
         {
             "source": "gate2",
-            "target": "ranger-stop1"
+            "Sxpos": 24,
+            "Sypos": 54,
+            "target": "ranger-stop1","Txpos": 19,
+            "Typos": 24
         },
         {
             "source": "general-gate3",
-            "target": "camping1"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "general-gate3",
-            "target": "entrance2"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "general-gate3",
-            "target": "gate5"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "general-gate3",
-            "target": "entrance4"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "general-gate3",
-            "target": "gate8"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "general-gate3",
-            "target": "camping8"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "general-gate3",
-            "target": "general-gate6"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "general-gate3",
-            "target": "general-gate5"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "general-gate3",
-            "target": "gate4"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "general-gate3",
-            "target": "general-gate3"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "general-gate3",
-            "target": "camping2"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "general-gate3",
-            "target": "gate3"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "general-gate3",
-            "target": "general-gate0"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "general-gate3",
-            "target": "general-gate2"
+            "Sxpos": 186,
+            "Sypos": 55,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "gate3",
-            "target": "general-gate5"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "gate3",
-            "target": "entrance2"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "gate3",
-            "target": "gate5"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "gate3",
-            "target": "entrance4"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "gate3",
-            "target": "gate8"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "gate3",
-            "target": "camping8"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "gate3",
-            "target": "general-gate6"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "gate3",
-            "target": "gate4"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "gate3",
-            "target": "general-gate3"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "gate3",
-            "target": "camping2"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "gate3",
-            "target": "gate3"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "gate3",
-            "target": "general-gate0"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "gate3",
-            "target": "general-gate2"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "gate3",
-            "target": "camping1"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "gate3",
-            "target": "ranger-stop3"
+            "Sxpos": 149,
+            "Sypos": 60,
+            "target": "ranger-stop3",
+            "Txpos": 148,
+            "Typos": 45
         },
         {
             "source": "camping3",
-            "target": "gate2"
+            "Sxpos": 44,
+            "Sypos": 64,
+            "target": "gate2",
+            "Txpos": 24,
+            "Typos": 54
         },
         {
             "source": "camping3",
-            "target": "general-gate7"
+            "Sxpos": 44,
+            "Sypos": 64,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "camping3",
-            "target": "camping5"
+            "Sxpos": 44,
+            "Sypos": 64,
+            "target": "camping5",
+            "Txpos": 48,
+            "Typos": 89
         },
         {
             "source": "camping3",
-            "target": "gate1"
+            "Sxpos": 44,
+            "Sypos": 64,
+            "target": "gate1",
+            "Txpos": 58,
+            "Typos": 44
         },
         {
             "source": "camping3",
-            "target": "camping0"
+            "Sxpos": 44,
+            "Sypos": 64,
+            "target": "camping0",
+            "Txpos": 52,
+            "Typos": 41
         },
         {
             "source": "camping3",
-            "target": "camping4"
+            "Sxpos": 44,
+            "Sypos": 64,
+            "target": "camping4",
+            "Txpos": 45,
+            "Typos": 68
         },
         {
             "source": "camping3",
-            "target": "entrance1"
+            "Sxpos": 44,
+            "Sypos": 64,
+            "target": "entrance1",
+            "Txpos": 17,
+            "Typos": 67
         },
         {
             "source": "entrance1",
-            "target": "general-gate7"
+            "Sxpos": 17,
+            "Sypos": 67,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "entrance1",
-            "target": "camping5"
+            "Sxpos": 17,
+            "Sypos": 67,
+            "target": "camping5",
+            "Txpos": 48,
+            "Typos": 89
         },
         {
             "source": "entrance1",
-            "target": "gate1"
+            "Sxpos": 17,
+            "Sypos": 67,
+            "target": "gate1",
+            "Txpos": 58,
+            "Typos": 44
         },
         {
             "source": "entrance1",
-            "target": "camping0"
+            "Sxpos": 17,
+            "Sypos": 67,
+            "target": "camping0",
+            "Txpos": 52,
+            "Typos": 41
         },
         {
             "source": "entrance1",
-            "target": "camping4"
+            "Sxpos": 17,
+            "Sypos": 67,
+            "target": "camping4",
+            "Txpos": 45,
+            "Typos": 68
         },
         {
             "source": "entrance1",
-            "target": "gate2"
+            "Sxpos": 17,
+            "Sypos": 67,
+            "target": "gate2",
+            "Txpos": 24,
+            "Typos": 54
         },
         {
             "source": "entrance1",
-            "target": "camping3"
+            "Sxpos": 17,
+            "Sypos": 67,
+            "target": "camping3",
+            "Txpos": 44,
+            "Typos": 64
         },
         {
             "source": "camping4",
-            "target": "general-gate7"
+            "Sxpos": 45,
+            "Sypos": 68,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "camping4",
-            "target": "gate2"
+            "Sxpos": 45,
+            "Sypos": 68,
+            "target": "gate2",
+            "Txpos": 24,
+            "Typos": 54
         },
         {
             "source": "camping4",
-            "target": "camping3"
+            "Sxpos": 45,
+            "Sypos": 68,
+            "target": "camping3",
+            "Txpos": 44,
+            "Typos": 64
         },
         {
             "source": "camping4",
-            "target": "entrance1"
+            "Sxpos": 45,
+            "Sypos": 68,
+            "target": "entrance1",
+            "Txpos": 17,
+            "Typos": 67
         },
         {
             "source": "camping4",
-            "target": "camping5"
+            "Sxpos": 45,
+            "Sypos": 68,
+            "target": "camping5",
+            "Txpos": 48,
+            "Typos": 89
         },
         {
             "source": "camping4",
-            "target": "gate1"
+            "Sxpos": 45,
+            "Sypos": 68,
+            "target": "gate1",
+            "Txpos": 58,
+            "Typos": 44
         },
         {
             "source": "camping4",
-            "target": "camping0"
+            "Sxpos": 45,
+            "Sypos": 68,
+            "target": "camping0",
+            "Txpos": 52,
+            "Typos": 41
         },
         {
             "source": "entrance2",
-            "target": "general-gate3"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "entrance2",
-            "target": "general-gate5"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "entrance2",
-            "target": "general-gate0"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "entrance2",
-            "target": "camping2"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "entrance2",
-            "target": "general-gate2"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "entrance2",
-            "target": "gate3"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "entrance2",
-            "target": "camping1"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "entrance2",
-            "target": "gate5"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "entrance2",
-            "target": "entrance4"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "entrance2",
-            "target": "gate8"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "entrance2",
-            "target": "camping8"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "entrance2",
-            "target": "general-gate6"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "entrance2",
-            "target": "gate4"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "entrance2",
-            "target": "entrance2"
+            "Sxpos": 183,
+            "Sypos": 87,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "camping5",
-            "target": "general-gate7"
+            "Sxpos": 48,
+            "Sypos": 89,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "camping5",
-            "target": "gate2"
+            "Sxpos": 48,
+            "Sypos": 89,
+            "target": "gate2",
+            "Txpos": 24,
+            "Typos": 54
         },
         {
             "source": "camping5",
-            "target": "camping3"
+            "Sxpos": 48,
+            "Sypos": 89,
+            "target": "camping3",
+            "Txpos": 44,
+            "Typos": 64
         },
         {
             "source": "camping5",
-            "target": "entrance1"
+            "Sxpos": 48,
+            "Sypos": 89,
+            "target": "entrance1",
+            "Txpos": 17,
+            "Typos": 67
         },
         {
             "source": "camping5",
-            "target": "gate1"
+            "Sxpos": 48,
+            "Sypos": 89,
+            "target": "gate1",
+            "Txpos": 58,
+            "Typos": 44
         },
         {
             "source": "camping5",
-            "target": "camping0"
+            "Sxpos": 48,
+            "Sypos": 89,
+            "target": "camping0",
+            "Txpos": 52,
+            "Typos": 41
         },
         {
             "source": "camping5",
-            "target": "camping4"
+            "Sxpos": 48,
+            "Sypos": 89,
+            "target": "camping4",
+            "Txpos": 45,
+            "Typos": 68
         },
         {
             "source": "ranger-stop4",
-            "target": "camping6"
+            "Sxpos": 18,
+            "Sypos": 95,
+            "target": "camping6",
+            "Txpos": 20,
+            "Typos": 121
         },
         {
             "source": "ranger-stop4",
-            "target": "general-gate7"
+            "Sxpos": 18,
+            "Sypos": 95,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "general-gate4",
-            "target": "gate0"
+            "Sxpos": 69,
+            "Sypos": 98,
+            "target": "gate0","Txpos": 63,
+            "Typos": 33
         },
         {
             "source": "general-gate4",
-            "target": "general-gate1"
+            "Sxpos": 69,
+            "Sypos": 98,
+            "target": "general-gate1","Txpos": 64,
+            "Typos": 25
         },
         {
             "source": "general-gate4",
-            "target": "entrance0"
+            "Sxpos": 69,
+            "Sypos": 98,
+            "target": "entrance0","Txpos": 62,
+            "Typos": 13
         },
         {
             "source": "general-gate4",
-            "target": "general-gate4"
+            "Sxpos": 69,
+            "Sypos": 98,
+            "target": "general-gate4",
+            "Txpos": 69,
+            "Typos": 98
         },
         {
             "source": "general-gate4",
-            "target": "gate6"
+            "Sxpos": 69,
+            "Sypos": 98,
+            "target": "gate6",
+            "Txpos": 116,
+            "Typos": 151
         },
         {
             "source": "general-gate4",
-            "target": "entrance3"
+            "Sxpos": 69,
+            "Sypos": 98,
+            "target": "entrance3",
+            "Txpos": 115,
+            "Typos": 167
         },
         {
             "source": "general-gate4",
-            "target": "gate7"
+            "Sxpos": 69,
+            "Sypos": 98,
+            "target": "gate7",
+            "Txpos": 97,
+            "Typos": 160
         },
         {
             "source": "general-gate4",
-            "target": "general-gate7"
+            "Sxpos": 69,
+            "Sypos": 98,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "general-gate5",
-            "target": "gate5"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "general-gate5",
-            "target": "entrance4"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "general-gate5",
-            "target": "gate8"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "general-gate5",
-            "target": "camping8"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "general-gate5",
-            "target": "general-gate6"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "general-gate5",
-            "target": "gate4"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "general-gate5",
-            "target": "general-gate5"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "general-gate5",
-            "target": "general-gate3"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "general-gate5",
-            "target": "entrance2"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "general-gate5",
-            "target": "camping2"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "general-gate5",
-            "target": "gate3"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "general-gate5",
-            "target": "general-gate0"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "general-gate5",
-            "target": "general-gate2"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "general-gate5",
-            "target": "camping1"
+            "Sxpos": 124,
+            "Sypos": 111,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "gate4",
-            "target": "gate5"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "gate4",
-            "target": "entrance4"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "gate4",
-            "target": "gate8"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "gate4",
-            "target": "camping8"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "gate4",
-            "target": "general-gate6"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "gate4",
-            "target": "general-gate5"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "gate4",
-            "target": "gate4"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "gate4",
-            "target": "general-gate3"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "gate4",
-            "target": "entrance2"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "gate4",
-            "target": "camping2"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "gate4",
-            "target": "gate3"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "gate4",
-            "target": "general-gate0"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "gate4",
-            "target": "general-gate2"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "gate4",
-            "target": "camping1"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "gate4",
-            "target": "ranger-stop5"
+            "Sxpos": 164,
+            "Sypos": 114,
+            "target": "ranger-stop5",
+            "Txpos": 151,
+            "Typos": 118
         },
         {
             "source": "ranger-stop5",
-            "target": "gate4"
+            "Sxpos": 151,
+            "Sypos": 118,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "camping6",
-            "target": "ranger-stop4"
+            "Sxpos": 20,
+            "Sypos": 121,
+            "target": "ranger-stop4",
+            "Txpos": 18,
+            "Typos": 95
         },
         {
             "source": "camping6",
-            "target": "general-gate7"
+            "Sxpos": 20,
+            "Sypos": 121,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "general-gate6",
-            "target": "camping7"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "camping7",
+            "Txpos": 181,
+            "Typos": 145
         },
         {
             "source": "general-gate6",
-            "target": "gate5"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "general-gate6",
-            "target": "entrance4"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "general-gate6",
-            "target": "gate8"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "general-gate6",
-            "target": "camping8"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "general-gate6",
-            "target": "general-gate6"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "general-gate6",
-            "target": "general-gate5"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "general-gate6",
-            "target": "entrance2"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "general-gate6",
-            "target": "gate4"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "general-gate6",
-            "target": "general-gate3"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "general-gate6",
-            "target": "general-gate0"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "general-gate6",
-            "target": "camping2"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "general-gate6",
-            "target": "general-gate2"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "general-gate6",
-            "target": "gate3"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "general-gate6",
-            "target": "camping1"
+            "Sxpos": 136,
+            "Sypos": 137,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "general-gate7",
-            "target": "camping6"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "camping6",
+            "Txpos": 20,
+            "Typos": 121
         },
         {
             "source": "general-gate7",
-            "target": "ranger-stop4"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "ranger-stop4",
+            "Txpos": 18,
+            "Typos": 95
         },
         {
             "source": "general-gate7",
-            "target": "general-gate4"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "general-gate4",
+            "Txpos": 69,
+            "Typos": 98
         },
         {
             "source": "general-gate7",
-            "target": "gate0"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "gate0","Txpos": 63,
+            "Typos": 33
         },
         {
             "source": "general-gate7",
-            "target": "general-gate1"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "general-gate1","Txpos": 64,
+            "Typos": 25
         },
         {
             "source": "general-gate7",
-            "target": "entrance0"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "entrance0","Txpos": 62,
+            "Typos": 13
         },
         {
             "source": "general-gate7",
-            "target": "gate6"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "gate6",
+            "Txpos": 116,
+            "Typos": 151
         },
         {
             "source": "general-gate7",
-            "target": "entrance3"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "entrance3",
+            "Txpos": 115,
+            "Typos": 167
         },
         {
             "source": "general-gate7",
-            "target": "gate7"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "gate7",
+            "Txpos": 97,
+            "Typos": 160
         },
         {
             "source": "general-gate7",
-            "target": "gate2"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "gate2",
+            "Txpos": 24,
+            "Typos": 54
         },
         {
             "source": "general-gate7",
-            "target": "camping3"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "camping3",
+            "Txpos": 44,
+            "Typos": 64
         },
         {
             "source": "general-gate7",
-            "target": "entrance1"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "entrance1",
+            "Txpos": 17,
+            "Typos": 67
         },
         {
             "source": "general-gate7",
-            "target": "camping5"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "camping5",
+            "Txpos": 48,
+            "Typos": 89
         },
         {
             "source": "general-gate7",
-            "target": "gate1"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "gate1",
+            "Txpos": 58,
+            "Typos": 44
         },
         {
             "source": "general-gate7",
-            "target": "camping0"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "camping0",
+            "Txpos": 52,
+            "Typos": 41
         },
         {
             "source": "general-gate7",
-            "target": "camping4"
+            "Sxpos": 65,
+            "Sypos": 144,
+            "target": "camping4",
+            "Txpos": 45,
+            "Typos": 68
         },
         {
             "source": "camping7",
-            "target": "camping7"
+            "Sxpos": 181,
+            "Sypos": 145,
+            "target": "camping7",
+            "Txpos": 181,
+            "Typos": 145
         },
         {
             "source": "camping7",
-            "target": "general-gate6"
+            "Sxpos": 181,
+            "Sypos": 145,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "gate5",
-            "target": "entrance4"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "gate5",
-            "target": "gate8"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "gate5",
-            "target": "camping8"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "gate5",
-            "target": "general-gate6"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "gate5",
-            "target": "gate5"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "gate5",
-            "target": "general-gate5"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "gate5",
-            "target": "entrance2"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "gate5",
-            "target": "gate4"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "gate5",
-            "target": "general-gate3"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "gate5",
-            "target": "general-gate0"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "gate5",
-            "target": "camping2"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "gate5",
-            "target": "general-gate2"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "gate5",
-            "target": "gate3"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "gate5",
-            "target": "camping1"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "gate5",
-            "target": "ranger-stop6"
+            "Sxpos": 131,
+            "Sypos": 146,
+            "target": "ranger-stop6",
+            "Txpos": 123,
+            "Typos": 147
         },
         {
             "source": "ranger-stop6",
-            "target": "gate6"
+            "Sxpos": 123,
+            "Sypos": 147,
+            "target": "gate6",
+            "Txpos": 116,
+            "Typos": 151
         },
         {
             "source": "ranger-stop6",
-            "target": "gate5"
+            "Sxpos": 123,
+            "Sypos": 147,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "gate6",
-            "target": "ranger-stop6"
+            "Sxpos": 116,
+            "Sypos": 151,
+            "target": "ranger-stop6",
+            "Txpos": 123,
+            "Typos": 147
         },
         {
             "source": "gate6",
-            "target": "entrance3"
+            "Sxpos": 116,
+            "Sypos": 151,
+            "target": "entrance3",
+            "Txpos": 115,
+            "Typos": 167
         },
         {
             "source": "gate6",
-            "target": "gate0"
+            "Sxpos": 116,
+            "Sypos": 151,
+            "target": "gate0","Txpos": 63,
+            "Typos": 33
         },
         {
             "source": "gate6",
-            "target": "general-gate1"
+            "Sxpos": 116,
+            "Sypos": 151,
+            "target": "general-gate1","Txpos": 64,
+            "Typos": 25
         },
         {
             "source": "gate6",
-            "target": "entrance0"
+            "Sxpos": 116,
+            "Sypos": 151,
+            "target": "entrance0","Txpos": 62,
+            "Typos": 13
         },
         {
             "source": "gate6",
-            "target": "general-gate4"
+            "Sxpos": 116,
+            "Sypos": 151,
+            "target": "general-gate4",
+            "Txpos": 69,
+            "Typos": 98
         },
         {
             "source": "gate6",
-            "target": "gate7"
+            "Sxpos": 116,
+            "Sypos": 151,
+            "target": "gate7",
+            "Txpos": 97,
+            "Typos": 160
         },
         {
             "source": "gate6",
-            "target": "general-gate7"
+            "Sxpos": 116,
+            "Sypos": 151,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "ranger-stop7",
-            "target": "gate7"
+            "Sxpos": 100,
+            "Sypos": 152,
+            "target": "gate7",
+            "Txpos": 97,
+            "Typos": 160
         },
         {
             "source": "gate7",
-            "target": "ranger-stop7"
+            "Sxpos": 97,
+            "Sypos": 160,
+            "target": "ranger-stop7",
+            "Txpos": 100,
+            "Typos": 152
         },
         {
             "source": "gate7",
-            "target": "general-gate4"
+            "Sxpos": 97,
+            "Sypos": 160,
+            "target": "general-gate4",
+            "Txpos": 69,
+            "Typos": 98
         },
         {
             "source": "gate7",
-            "target": "gate0"
+            "Sxpos": 97,
+            "Sypos": 160,
+            "target": "gate0","Txpos": 63,
+            "Typos": 33
         },
         {
             "source": "gate7",
-            "target": "general-gate1"
+            "Sxpos": 97,
+            "Sypos": 160,
+            "target": "general-gate1","Txpos": 64,
+            "Typos": 25
         },
         {
             "source": "gate7",
-            "target": "entrance0"
+            "Sxpos": 97,
+            "Sypos": 160,
+            "target": "entrance0","Txpos": 62,
+            "Typos": 13
         },
         {
             "source": "gate7",
-            "target": "gate6"
+            "Sxpos": 97,
+            "Sypos": 160,
+            "target": "gate6",
+            "Txpos": 116,
+            "Typos": 151
         },
         {
             "source": "gate7",
-            "target": "entrance3"
+            "Sxpos": 97,
+            "Sypos": 160,
+            "target": "entrance3",
+            "Txpos": 115,
+            "Typos": 167
         },
         {
             "source": "gate7",
-            "target": "general-gate7"
+            "Sxpos": 97,
+            "Sypos": 160,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "entrance3",
-            "target": "gate6"
+            "Sxpos": 115,
+            "Sypos": 167,
+            "target": "gate6",
+            "Txpos": 116,
+            "Typos": 151
         },
         {
             "source": "entrance3",
-            "target": "gate0"
+            "Sxpos": 115,
+            "Sypos": 167,
+            "target": "gate0","Txpos": 63,
+            "Typos": 33
         },
         {
             "source": "entrance3",
-            "target": "general-gate1"
+            "Sxpos": 115,
+            "Sypos": 167,
+            "target": "general-gate1","Txpos": 64,
+            "Typos": 25
         },
         {
             "source": "entrance3",
-            "target": "entrance0"
+            "Sxpos": 115,
+            "Sypos": 167,
+            "target": "entrance0","Txpos": 62,
+            "Typos": 13
         },
         {
             "source": "entrance3",
-            "target": "general-gate4"
+            "Sxpos": 115,
+            "Sypos": 167,
+            "target": "general-gate4",
+            "Txpos": 69,
+            "Typos": 98
         },
         {
             "source": "entrance3",
-            "target": "gate7"
+            "Sxpos": 115,
+            "Sypos": 167,
+            "target": "gate7",
+            "Txpos": 97,
+            "Typos": 160
         },
         {
             "source": "entrance3",
-            "target": "general-gate7"
+            "Sxpos": 115,
+            "Sypos": 167,
+            "target": "general-gate7",
+            "Txpos": 65,
+            "Typos": 144
         },
         {
             "source": "ranger-base",
-            "target": "gate8"
+            "Sxpos": 128,
+            "Sypos": 175,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "camping8",
-            "target": "entrance4"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "camping8",
-            "target": "gate8"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "camping8",
-            "target": "gate5"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "camping8",
-            "target": "general-gate6"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "camping8",
-            "target": "camping8"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "camping8",
-            "target": "general-gate5"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "camping8",
-            "target": "gate4"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "camping8",
-            "target": "general-gate3"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "camping8",
-            "target": "entrance2"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "camping8",
-            "target": "camping2"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "camping8",
-            "target": "gate3"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "camping8",
-            "target": "general-gate0"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "camping8",
-            "target": "general-gate2"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "camping8",
-            "target": "camping1"
+            "Sxpos": 150,
+            "Sypos": 177,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "gate8",
-            "target": "entrance4"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "gate8",
-            "target": "gate5"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "gate8",
-            "target": "general-gate6"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "gate8",
-            "target": "gate8"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "gate8",
-            "target": "camping8"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "gate8",
-            "target": "general-gate5"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "gate8",
-            "target": "gate4"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "gate8",
-            "target": "general-gate3"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "gate8",
-            "target": "entrance2"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "gate8",
-            "target": "camping2"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "gate8",
-            "target": "gate3"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "gate8",
-            "target": "general-gate0"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "gate8",
-            "target": "general-gate2"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "gate8",
-            "target": "camping1"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         },
         {
             "source": "gate8",
-            "target": "ranger-base"
+            "Sxpos": 138,
+            "Sypos": 181,
+            "target": "ranger-base",
+            "Txpos": 128,
+            "Typos": 175
         },
         {
             "source": "entrance4",
-            "target": "gate5"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "gate5",
+            "Txpos": 131,
+            "Typos": 146
         },
         {
             "source": "entrance4",
-            "target": "general-gate6"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "general-gate6",
+            "Txpos": 136,
+            "Typos": 137
         },
         {
             "source": "entrance4",
-            "target": "entrance4"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "entrance4",
+            "Txpos": 140,
+            "Typos": 184
         },
         {
             "source": "entrance4",
-            "target": "gate8"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "gate8",
+            "Txpos": 138,
+            "Typos": 181
         },
         {
             "source": "entrance4",
-            "target": "camping8"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "camping8",
+            "Txpos": 150,
+            "Typos": 177
         },
         {
             "source": "entrance4",
-            "target": "general-gate5"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "general-gate5",
+            "Txpos": 124,
+            "Typos": 111
         },
         {
             "source": "entrance4",
-            "target": "gate4"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "gate4",
+            "Txpos": 164,
+            "Typos": 114
         },
         {
             "source": "entrance4",
-            "target": "general-gate3"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "general-gate3",
+            "Txpos": 186,
+            "Typos": 55
         },
         {
             "source": "entrance4",
-            "target": "entrance2"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "entrance2",
+            "Txpos": 183,
+            "Typos": 87
         },
         {
             "source": "entrance4",
-            "target": "camping2"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "camping2",
+            "Txpos": 129,
+            "Typos": 50
         },
         {
             "source": "entrance4",
-            "target": "gate3"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "gate3",
+            "Txpos": 149,
+            "Typos": 60
         },
         {
             "source": "entrance4",
-            "target": "general-gate0"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "general-gate0","Txpos": 110,
+            "Typos": 9
         },
         {
             "source": "entrance4",
-            "target": "general-gate2"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "general-gate2","Txpos": 104,
+            "Typos": 32
         },
         {
             "source": "entrance4",
-            "target": "camping1"
+            "Sxpos": 140,
+            "Sypos": 184,
+            "target": "camping1",
+            "Txpos": 183,
+            "Typos": 48
         }
     ]
 }

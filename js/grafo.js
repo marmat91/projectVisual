@@ -59,7 +59,13 @@ function creaGrafo (selection, data2){
         .enter()
         .append('line')
         .attr('stroke-width', 0.0)
-        .attr('stroke', '#E5E5E5');
+        .attr('stroke', '#E5E5E5')
+        .attr("class", function(d) { console.log(d); return d.source; })
+        .attr("id", function(d) { return d.target; })
+        .attr("x1", function (d) {return d.Sxpos})
+        .attr("y1", function (d) { return d.Sypos; })
+        .attr("x2", function (d) { return d.Txpos; })
+        .attr("y2", function (d) { return d.Typos; });
 
     var node = svg.append("g")
         .attr("class", "nodes")
@@ -106,30 +112,6 @@ function creaGrafo (selection, data2){
         .attr("x", function (d) { return nodeScale(d)*2-4})
         .attr("y", -16)
 
-    var simulation = d3.forceSimulation()
-        .force("link", d3.forceLink().id(function(d) {return d.key;}))
-
-    node.append("title")
-        .text(function(d) { return  d.key + ", \nn° veicoli: " + d.check_ins  ; })
-    // add nodes and links to simulation
-    simulation
-        .nodes(selection.nodes)
-        .on("tick", ticked);
-
-    simulation
-        .force("link")
-        .links(selection.links);
-
-    function ticked() {
-        c=0;
-        link
-            .attr("class", function(d) { return d.source.key; })
-            .attr("id", function(d) { return d.target.key; })
-            .attr("x1", function (d) { return d.source.xpos; })
-            .attr("y1", function (d) { return d.source.ypos; })
-            .attr("x2", function (d) { return d.target.xpos; })
-            .attr("y2", function (d) { return d.target.ypos; });
-
         node
             .attr("key", function(d) { return d.key ;})
             .attr("r", function(d){return nodeScale(d.check_ins);})
@@ -148,9 +130,11 @@ function creaGrafo (selection, data2){
                 d3.select("#xyz")
                     .selectAll("line")
                     .attr('stroke-width', 0.0);
-                console.log(this); });
-    }
+                console.log(this); })
+            .append("title")
+            .text(function(d) { return  d.key + ", \nn° veicoli: " + d.check_ins  ; });
 }
+
 function updateGrafo (dati, data2){
     var cf	=	crossfilter(data2);
     svg.selectAll("g").remove();
@@ -206,7 +190,13 @@ function updateGrafo (dati, data2){
         .enter()
         .append('line')
         .attr('stroke-width', 0.0)
-        .attr('stroke', '#E5E5E5');
+        .attr('stroke', '#E5E5E5')
+        .attr("class", function(d) { console.log(d); return d.source; })
+        .attr("id", function(d) { return d.target; })
+        .attr("x1", function (d) {return d.Sxpos})
+        .attr("y1", function (d) { return d.Sypos; })
+        .attr("x2", function (d) { return d.Txpos; })
+        .attr("y2", function (d) { return d.Typos; });
 
     var node = svg.append("g")
         .attr("class", "nodes")
@@ -215,7 +205,7 @@ function updateGrafo (dati, data2){
         .enter()
         .append("circle")
         .attr("opacity", 0.75)
-        .attr("fill", function(d) { return (d.color); })
+        .attr("fill", function(d) { return (d.color); });
 
     // set scale for node size
     var nodeSizeRange = [1, 10];
@@ -223,18 +213,19 @@ function updateGrafo (dati, data2){
     (dati.nodes).forEach(function(element) {
         valori.push(element.check_ins);
     })
+    console.log(valori)
     var minmax = d3.extent(valori);
     var nodeScale = d3.scaleLinear()
         .range(nodeSizeRange)
         .domain(minmax);
 
-    //inserisco la legenda
     var legenda = svg.append("g")
         .attr("transform","translate(190 ,170)")
         .append("text")
         .attr("fill", "yellow")
         .style("font-size","7pt")
         .text("Legenda (min, MAX)")
+
     var elem = svg.selectAll("g legend")
         .data(minmax)
     var elemEnter = elem.enter()
@@ -252,49 +243,26 @@ function updateGrafo (dati, data2){
         .attr("x", function (d) { return nodeScale(d)*2-4})
         .attr("y", -16)
 
-    var simulation = d3.forceSimulation()
-        .force("link", d3.forceLink().id(function(d) {return d.key;}))
-
-    node.append("title")
-        .text(function(d) { return  d.key + ", \nn° veicoli: " + d.check_ins ;})
-    // add nodes and links to simulation
-    simulation
-        .nodes(dati.nodes)
-        .on("tick", ticked);
-
-    simulation
-        .force("link")
-        .links(dati.links);
-
-    function ticked() {
-        c=0;
-        link
-            .attr("class", function(d) { return d.source.key; })
-            .attr("id", function(d) { return d.target.key; })
-            .attr("x1", function (d) { return d.source.xpos; })
-            .attr("y1", function (d) { return d.source.ypos; })
-            .attr("x2", function (d) { return d.target.xpos; })
-            .attr("y2", function (d) { return d.target.ypos; });
-
-        node
-            .attr("key", function(d) { return d.key ;})
-            .attr("r", function(d){return nodeScale(d.check_ins);})
-            .attr("cx", function (d) { return d.xpos;})
-            .attr("cy", function (d) { return d.ypos;})
-            .on('mouseover', function(d) {
-                console.log($(this).attr("key"));
-                d3.select("#xyz")
-                    .selectAll("."+$(this).attr("key"))
-                    .attr('stroke-width', 0.4);
-                d3.select("#xyz")
-                    .selectAll("#"+$(this).attr("key"))
-                    .attr('stroke-width', 0.4);
-            })
-            .on("mouseout", function(d) {
-                d3.select("#xyz")
-                    .selectAll("line")
-                    .attr('stroke-width', 0.0);
-                console.log(this); });
-    }
+    node
+        .attr("key", function(d) { return d.key ;})
+        .attr("r", function(d){return nodeScale(d.check_ins);})
+        .attr("cx", function (d) { return d.xpos;})
+        .attr("cy", function (d) { return d.ypos;})
+        .on('mouseover', function(d) {
+            console.log($(this).attr("key"));
+            d3.select("#xyz")
+                .selectAll("."+$(this).attr("key"))
+                .attr('stroke-width', 0.4);
+            d3.select("#xyz")
+                .selectAll("#"+$(this).attr("key"))
+                .attr('stroke-width', 0.4);
+        })
+        .on("mouseout", function(d) {
+            d3.select("#xyz")
+                .selectAll("line")
+                .attr('stroke-width', 0.0);
+            console.log(this); })
+        .append("title")
+        .text(function(d) { return  d.key + ", \nn° veicoli: " + d.check_ins  ; });
 
 }

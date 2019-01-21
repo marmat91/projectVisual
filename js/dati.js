@@ -17,12 +17,20 @@ let tutti =[
     {key:"5",value:"Bus a 2 assi"},
     {key:"6", value:"Bus a 3 assi"}];
 function app (){
+
 var i=0;
 function me (){
     d3.json("data/graph.json", function(data) {
         d3.json("data/dati_mese.json", function(data1) {
             d3.json("data/dati_mese_giorno.json", function (data2){
                 d3.json("data/percorsi.json", function (data3) {
+                    (data.links).forEach(function(l) {
+                        (data.nodes).forEach(function(element) {
+                            if (l.source == element.key) {
+                                console.log(element.xpos)
+                            }
+                        })
+                    })
                     creaSelettoreVeicolo(data, data1, data2)
                     creaSelettoreDate(data, data1, data2)
                     creaSelettoreVeicoloB(data, data1, data2, data3)
@@ -70,14 +78,15 @@ function creaSelettoreVeicolo(data, data1, data2) {
         .append("br");
 
     var labels = toolbar.append("select")
-        .attr('id','selettore')
-        .on('change',function(d) {
-            console.log("click veicolo ", this.value);
-            for (i = 0; i < tutti.length; i++) {
-                if (this.value==tutti[i].value){
-                    tipo_veicolo=tutti[i].key;
-                    vei=tutti[i].value;
-                }
+            .style("width","300px")
+            .attr('id','selettore')
+            .on('change',function(d) {
+                console.log("click veicolo ", this.value);
+                for (i = 0; i < tutti.length; i++) {
+                    if (this.value==tutti[i].value){
+                        tipo_veicolo=tutti[i].key;
+                        vei=tutti[i].value;
+                    }
             };
             updateGrafo(data, data2)
         })
@@ -113,6 +122,7 @@ function creaSelettoreDate(data, data1, data2) {
         .append("br");
 
     var tbYear = toolbar2.append("select")
+        .style("width","300px")
         .on('change',function(d) {
             mese_anno=this.value;
             giorno='Tutti i giorni'
@@ -155,6 +165,7 @@ function creaSelettoreDateSpec(data, data2) {
     }
 
     var tbYear = toolbar3
+        .style("width","300px")
         .on('change',function(d) {
             giorno=this.value;
             console.log(mese_anno);

@@ -100,7 +100,7 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
             }
         }
     })
-    var nodeSizeRange = [30, 40];
+    var nodeSizeRange = [20, 40];
     var valori =[];
 
     (flusso).forEach(function(element) {
@@ -111,6 +111,29 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
         .range(nodeSizeRange)
         .domain(minmax);
 
+    //legenda min max
+    var legenda = d3.select("#graf").append("g")
+        .attr("transform","translate(620 ,450)")
+        .append("text")
+        .attr("fill", "black")
+        .style("font-size","16pt")
+        .text("Legenda (min, MAX)")
+    var elem = d3.select("#graf").selectAll("g legend")
+        .data(minmax)
+    var elemEnter = elem.enter()
+        .append("g")
+        .attr("transform","translate(575 ,500)")
+    var circle = elemEnter.append("circle")
+        .attr("r", function(d){return nodeScale(d);})
+        .attr("stroke","red")
+        .attr("fill", "white")
+        .attr("cx", function (d) { return nodeScale(d)*3.2})
+    elemEnter.append("text")
+        .attr("fill", "black")
+        .style("font-size","14pt")
+        .text(function(d){return d})
+        .attr("x", function (d) { return nodeScale(d)*3.2-7})
+        .attr("y", 5)
 
     var n = flusso.length, // total number of circles
         m = 3; // number of distinct clusters

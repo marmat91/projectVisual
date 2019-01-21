@@ -1,7 +1,6 @@
 let dettaglio_o_no=0
 function bolle (data, data2, data1, data3){
     dettaglio_o_no=0
-    console.log(data3)
     d3.select("#bolle").selectAll("g").remove();
     var legend = d3.select("#graf").append("g")
         .attr("transform",  "translate(700,100)" )
@@ -66,6 +65,30 @@ function bolle (data, data2, data1, data3){
     var nodeScale = d3.scaleLinear()
         .range(nodeSizeRange)
         .domain(minmax);
+
+    //legenda min max
+    var legenda = d3.select("#graf").append("g")
+        .attr("transform","translate(620 ,450)")
+        .append("text")
+        .attr("fill", "black")
+        .style("font-size","16pt")
+        .text("Legenda (min, MAX)")
+    var elem = d3.select("#graf").selectAll("g legend")
+        .data(minmax)
+    var elemEnter = elem.enter()
+        .append("g")
+        .attr("transform","translate(600 ,500)")
+    var circle = elemEnter.append("circle")
+        .attr("r", function(d){return nodeScale(d);})
+        .attr("stroke","red")
+        .attr("fill", "white")
+        .attr("cx", function (d) { return nodeScale(d)*2.5})
+    elemEnter.append("text")
+        .attr("fill", "black")
+        .style("font-size","14pt")
+        .text(function(d){return d})
+        .attr("x", function (d) { return nodeScale(d)*2.5-7})
+        .attr("y", 5)
 
     // The largest node for each cluster.
     var clusters = new Array(m);
@@ -152,6 +175,10 @@ function bolle (data, data2, data1, data3){
 
     circle.append("title")
         .text(function(d) { return  "cluster gate: "+d.cluster +", \ngate: " + d.id_c + ", \nn° veicoli: " + d.n ;})
+        .on("click", function(d) {
+            var gate_sele=d.id_c;
+            bolle_dettaglio(data, data2, data1, gate_sele, data3)
+        });
 
 
 }
