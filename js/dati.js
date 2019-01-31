@@ -24,13 +24,6 @@ function me (){
         d3.json("data/dati_mese.json", function(data1) {
             d3.json("data/dati_mese_giorno.json", function (data2){
                 d3.json("data/percorsi.json", function (data3) {
-                    (data.links).forEach(function(l) {
-                        (data.nodes).forEach(function(element) {
-                            if (l.source == element.key) {
-                                console.log(element.xpos)
-                            }
-                        })
-                    })
                     creaSelettoreVeicolo(data, data1, data2)
                     creaSelettoreDate(data, data1, data2)
                     creaSelettoreVeicoloB(data, data1, data2, data3)
@@ -44,38 +37,14 @@ function me (){
     })
 }
 
-/*
-function createToolbar(data, data1, data2) {
+
+function creaSelettoreVeicolo(data, data1, data2) {
     //SELEZIONE DEI VEICOLI
     toolbar.append("label")
         .attr("style", "font-size: 18pt")
         .text("Seleziona il tipo di veicolo:");
 
-    var tbYear = toolbar.append("form");
-    var labels = tbYear.selectAll("button")
-        .data(tutti)
-        .enter()
-        .append("div")
-        .append("button")
-        .text(function(d) {
-            return d.value
-        })
-        .attr('style', 'width:180px; height:40px; font-size: 14pt; font-weight: bold')
-        .attr('name', 'mode')
-        .on("click", function(d) {
-            console.log("click year", d);
-            tipo_veicolo=d.key;
-            vei=d.value;
-            updateGrafo(data, data2)
-        })
-}
-*/
-function creaSelettoreVeicolo(data, data1, data2) {
-    //SELEZIONE DEI VEICOLI
-    toolbar.append("label")
-        .attr("style", "font-size: 18pt")
-        .text("Seleziona il tipo di veicolo:")
-        .append("br");
+    toolbar.append("br");
 
     var labels = toolbar.append("select")
             .style("width","300px")
@@ -118,8 +87,9 @@ function creaSelettoreDate(data, data1, data2) {
     let toolbar2 = d3.select("#toolbar2");
     toolbar2.append("label")
         .attr("style", "font-size: 18pt")
-        .text("Seleziona la data:")
-        .append("br");
+        .text("Seleziona la data:");
+
+    toolbar2.append("br");
 
     var tbYear = toolbar2.append("select")
         .style("width","300px")

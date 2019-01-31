@@ -60,7 +60,7 @@ function creaGrafo (selection, data2){
         .append('line')
         .attr('stroke-width', 0.0)
         .attr('stroke', '#E5E5E5')
-        .attr("class", function(d) { console.log(d); return d.source; })
+        .attr("class", function(d) {return d.source; })
         .attr("id", function(d) { return d.target; })
         .attr("x1", function (d) {return d.Sxpos})
         .attr("y1", function (d) { return d.Sypos; })
@@ -82,7 +82,6 @@ function creaGrafo (selection, data2){
     (selection.nodes).forEach(function(element) {
         valori.push(element.check_ins);
     })
-    console.log(valori)
     var minmax = d3.extent(valori);
     var nodeScale = d3.scaleLinear()
         .range(nodeSizeRange)
@@ -112,27 +111,27 @@ function creaGrafo (selection, data2){
         .attr("x", function (d) { return nodeScale(d)*2-4})
         .attr("y", -16)
 
-        node
-            .attr("key", function(d) { return d.key ;})
-            .attr("r", function(d){return nodeScale(d.check_ins);})
-            .attr("cx", function (d) { return d.xpos;})
-            .attr("cy", function (d) { return d.ypos;})
-            .on('mouseover', function(d) {
-                console.log($(this).attr("key"));
-                d3.select("#xyz")
-                    .selectAll("."+$(this).attr("key"))
-                    .attr('stroke-width', 0.4);
-                d3.select("#xyz")
-                    .selectAll("#"+$(this).attr("key"))
-                    .attr('stroke-width', 0.4);
-                })
-            .on("mouseout", function(d) {
-                d3.select("#xyz")
-                    .selectAll("line")
-                    .attr('stroke-width', 0.0);
-                console.log(this); })
-            .append("title")
-            .text(function(d) { return  d.key + ", \nn° veicoli: " + d.check_ins  ; });
+    node
+        .attr("key", function(d) { return d.key ;})
+        .attr("r", function(d){return nodeScale(d.check_ins);})
+        .attr("cx", function (d) { return d.xpos;})
+        .attr("cy", function (d) { return d.ypos;})
+        .on('mouseover', function(d) {
+            showPopover.call(this, d);
+            d3.select("#xyz")
+                .selectAll("."+$(this).attr("key"))
+                .attr('stroke-width', 0.4);
+            d3.select("#xyz")
+                .selectAll("#"+$(this).attr("key"))
+                .attr('stroke-width', 0.4);
+            })
+        .on("mouseout", function(d) {
+            removePopovers();
+            d3.select("#xyz")
+                .selectAll("line")
+                .attr('stroke-width', 0.0);
+            console.log(this); })
+
 }
 
 function updateGrafo (dati, data2){
@@ -191,7 +190,7 @@ function updateGrafo (dati, data2){
         .append('line')
         .attr('stroke-width', 0.0)
         .attr('stroke', '#E5E5E5')
-        .attr("class", function(d) { console.log(d); return d.source; })
+        .attr("class", function(d) { return d.source; })
         .attr("id", function(d) { return d.target; })
         .attr("x1", function (d) {return d.Sxpos})
         .attr("y1", function (d) { return d.Sypos; })
@@ -249,7 +248,7 @@ function updateGrafo (dati, data2){
         .attr("cx", function (d) { return d.xpos;})
         .attr("cy", function (d) { return d.ypos;})
         .on('mouseover', function(d) {
-            console.log($(this).attr("key"));
+            showPopover.call(this, d);
             d3.select("#xyz")
                 .selectAll("."+$(this).attr("key"))
                 .attr('stroke-width', 0.4);
@@ -258,6 +257,7 @@ function updateGrafo (dati, data2){
                 .attr('stroke-width', 0.4);
         })
         .on("mouseout", function(d) {
+            removePopovers();
             d3.select("#xyz")
                 .selectAll("line")
                 .attr('stroke-width', 0.0);
@@ -265,4 +265,23 @@ function updateGrafo (dati, data2){
         .append("title")
         .text(function(d) { return  d.key + ", \nn° veicoli: " + d.check_ins  ; });
 
+}
+function removePopovers () {
+    $('.popover').each(function() {
+        $(this).remove();
+    });
+}
+function showPopover (d) {
+    console.log(d)
+    $(this).popover({
+        title: d.key,
+        placement: 'auto top',
+        container: 'body',
+        trigger: 'manual',
+        html : true,
+        content: function() {
+            return "N° veicoli: "+d.check_ins;
+        }
+    });
+    $(this).popover('show')
 }

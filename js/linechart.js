@@ -1,7 +1,7 @@
 function creaLinechart (data2, data1){
     d3.select("#chBut").selectAll("g").remove();
     a=[]; //nello switch gli assegno i valori
-    for (j = 0; j<7;j++){
+    for (j = 0; j<8;j++){
         var cf	=	crossfilter(data1);
         var cartype = cf.dimension(function(d) { return d.cartype; });
         cartype.filterExact(tutti[j].key);
@@ -44,11 +44,12 @@ function creaLinechart (data2, data1){
                 for (i = 0; i < datiUpGroup.length; i++) {
                     Object.assign(a[i], {"Bus a 3 assi": datiUpGroup[i].value});
                 }
-
+                break;
         }
 
     }
     data=a;
+    console.log(a)
 
     var margin = {top: 20, right: 100, bottom: 30, left: 40},
         width  = 1000 - margin.left - margin.right,
@@ -71,8 +72,6 @@ function creaLinechart (data2, data1){
 
     var yAxis = d3.axisLeft(y);
 
-
-
     var line = d3.line()
         .x(function (d) { return x(d.label) + x.bandwidth() / 2; })
         .y(function (d) { return y(d.value); })
@@ -83,10 +82,10 @@ function creaLinechart (data2, data1){
     var varNames = d3.keys(a[0])
         .filter(function (key) { return key !== labelVar;}); //B
 
-    var colore = { "Auto a 2 assi (o moto)":"#001c9c", "Camion a 2 assi":"#101b4d","Camion a 2 assi del parco":"#475003",  "Camion a 3 assi":"#9c8305",
-        "Camion 4 assi o superiore":"#d3c47c","Bus a 2 assi":"#6ed349", "Bus a 3 assi":"#6ed349" };
+    var colore = { "Auto a 2 assi (o moto)":"#e41a1c", "Camion a 2 assi":"#377eb8","Camion a 2 assi del parco":"#4daf4a",  "Camion a 3 assi":"#984ea3",
+        "Camion 4 assi o superiore":"#ff7f00","Bus a 2 assi":"#ffff33", "Bus a 3 assi":"#a65628" };
 
-    var seriesData = varNames.map(function (name) { //D
+    var seriesData = varNames.map(function (name) { console.log (name) //D
         return {
             name: name,
             values: data.map(function (d) {
@@ -127,7 +126,7 @@ function creaLinechart (data2, data1){
         .attr("class", "series");
     series.append("path")
         .attr("class", "line")
-        .attr("d", function (d) { return line(d.values); })
+        .attr("d", function (d) {console.log(d); return line(d.values); })
         .style("stroke", function (d) { return colore[d.name]; })
         .style("stroke-width", "4px")
         .style("fill", "none");
@@ -143,11 +142,18 @@ function creaLinechart (data2, data1){
         .style("stroke", "grey")
         .style("stroke-width", "2px")
         .on("click", function(d) {
+            removePopoversLine();
             var mese_a=d.label;
             upLinechart(data2, mese_a, data1)
         })
-        .append("title")
-        .text(function(d) { return  d.name+"\nData: "+d.label + "\nNumero  " + d.value  ; })
+        .on('mouseover', function(d) {
+            showPopoverLine.call(this, d);
+        })
+        .on("mouseout", function(d) {
+            removePopoversLine();
+        });
+        //.append("title")
+        //.text(function(d) { return  d.name+"\nData: "+d.label + "\nNumero  " + d.value  ; })
     //////onclick è qui su
 
     var legend = svg_line.append("g")
@@ -169,4 +175,24 @@ function creaLinechart (data2, data1){
         .attr("dy", ".35em")
         .style("text-anchor", "end")
         .text(function (d) { return d; });
+}
+
+function removePopoversLine () {
+    $('.popover').each(function() {
+        $(this).remove();
+    });
+}
+function showPopoverLine (d) {
+    console.log(d)
+    $(this).popover({
+        title: d.name,
+        placement: 'auto top',
+        container: 'body',
+        trigger: 'manual',
+        html : true,
+        content: function() {
+            return "Data: "+d.label+"<br>Numero: "+d.value;
+        }
+    });
+    $(this).popover('show')
 }

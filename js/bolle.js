@@ -9,7 +9,7 @@ function bolle (data, data2, data1, data3){
         .enter()
         .append("g")
         .attr("class", "legend")
-        .attr("transform", function (d, i) {  console.log(d); return "translate(1," + i * 20 + ")"; });
+        .attr("transform", function (d, i) { return "translate(1," + i * 20 + ")"; });
     legend.append("circle")
         .attr("cx", 50)
         .attr("cy", 6)
@@ -173,11 +173,17 @@ function bolle (data, data2, data1, data3){
         .attr("dx", function(d){return (-1*d.radius)+(((d.id_c.length-13)*-1.2)*(d.radius/20))})
         .text(function(d) { return d.id_c ;})
 
-    circle.append("title")
-        .text(function(d) { return  "cluster gate: "+d.cluster +", \ngate: " + d.id_c + ", \nn° veicoli: " + d.n ;})
+    circle
         .on("click", function(d) {
+            removePopoversBolle();
             var gate_sele=d.id_c;
             bolle_dettaglio(data, data2, data1, gate_sele, data3)
+        })
+        .on('mouseover', function(d) {
+            showPopoverBolle.call(this, d);
+        })
+        .on("mouseout", function(d) {
+            removePopoversBolle();
         });
 
 
@@ -189,8 +195,8 @@ function creaSelettoreVeicoloB(data, data1, data2, data3) {
         .style('padding-top','64px')
         .append("label")
         .attr("style", "font-size: 26pt")
-        .text("Seleziona il tipo di veicolo:")
-        .append("br");
+        .text("Seleziona il tipo di veicolo:");
+    d3.select("#toolbarB").append("br");
 
     var labels = d3.select("#toolbarB").append("select")
         .attr('id','selettore')
@@ -239,8 +245,9 @@ function creaSelettoreDateB(data, data1, data2, data3) {
     let toolbar2 = d3.select("#toolbar2B");
     toolbar2.append("label")
         .attr("style", "font-size: 26pt")
-        .text("Seleziona la data:")
-        .append("br");
+        .text("Seleziona la data:");
+
+    toolbar2.append("br");
 
     var tbYear = toolbar2.append("select")
         .style("font-size","20pt")
@@ -267,7 +274,6 @@ function creaSelettoreDateB(data, data1, data2, data3) {
             return d
         });
 }
-
 
 function creaSelettoreDateSpecB(data, data2, data1, data3) {
     //SELETTORE PER LE DATE giorni
@@ -315,4 +321,24 @@ function creaSelettoreDateSpecB(data, data2, data1, data3) {
         .text(function(d) {
             return d.key
         });
+}
+
+function removePopoversBolle () {
+    $('.popover').each(function() {
+        $(this).remove();
+    });
+}
+function showPopoverBolle (d) {
+    console.log(d)
+    $(this).popover({
+        title: d.cluster,
+        placement: 'auto top',
+        container: 'body',
+        trigger: 'manual',
+        html : true,
+        content: function() {
+            return d.id_c+"<br>"+d.n+" veicoli";
+        }
+    });
+    $(this).popover('show')
 }

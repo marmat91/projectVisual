@@ -218,8 +218,12 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
         .attr("dx", function(d){return (-1*d.radius)+(((d.id_c.length-13)*-1.2)*(d.radius/20))})
         .text(function(d) { return d.id_c ;})
 
-    circle.append("title")
-        .text(function(d) { return  d.cluster +", \ngate: " + d.id_c + ", \nn° veicoli: " + d.n ;})
+    circle.on('mouseover', function(d) {
+        showPopoverBolle.call(this, d);
+        })
+        .on("mouseout", function(d) {
+            removePopoversBolle();
+        });
 
     var indietro = d3.select("#tool")
         .append("g")

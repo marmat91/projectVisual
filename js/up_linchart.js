@@ -17,9 +17,8 @@ function upLinechart (data2, mese_a, data1){
         n_giorni= n_giorni+1;
         }
     }
-    console.log(n_giorni);
     a=[]; //nello switch gli assegno i valori
-    for (j = 1; j<7;j++){
+    for (j = 1; j<8;j++){
         var cf	=	crossfilter(data2);
         var cartype = cf.dimension(function(d) { return d.cartype; });
         cartype.filterExact(tutti[j].key);
@@ -102,8 +101,8 @@ function upLinechart (data2, mese_a, data1){
     var varNames = d3.keys(a[0])
         .filter(function (key) { return key !== labelVar;}); //B
 
-    var colore = { "Auto a 2 assi (o moto)":"#001c9c", "Camion a 2 assi":"#101b4d","Camion a 2 assi del parco":"#475003",  "Camion a 3 assi":"#9c8305",
-        "Camion 4 assi o superiore":"#d3c47c","Bus a 2 assi":"#6ed349", "Bus a 3 assi":"#6ed349" };
+    var colore = { "Auto a 2 assi (o moto)":"#e41a1c", "Camion a 2 assi":"#377eb8","Camion a 2 assi del parco":"#4daf4a",  "Camion a 3 assi":"#984ea3",
+        "Camion 4 assi o superiore":"#ff7f00","Bus a 2 assi":"#ffff33", "Bus a 3 assi":"#a65628" };
 
     var seriesData = varNames.map(function (name) { //D
         return {
@@ -114,7 +113,7 @@ function upLinechart (data2, mese_a, data1){
         };
     });
 
-    x.domain(data.map(function (d) { console.log(d); return d.quarter;})); //E
+    x.domain(data.map(function (d) { return d.quarter;})); //E
     y.domain([
         d3.min(seriesData, function (c) {
             return d3.min(c.values, function (d) { return d.value; });
@@ -161,8 +160,13 @@ function upLinechart (data2, mese_a, data1){
         .style("fill", function (d) { return colore[d.name]; })
         .style("stroke", "grey")
         .style("stroke-width", "2px")
-        .append("title")
-        .text(function(d) { return  d.name+"\nGiorno: "+d.label + "\nNumero  " + d.value  ; })
+        .on('mouseover', function(d) {
+            showPopoverLine.call(this, d);
+        })
+        .on("mouseout", function(d) {
+            removePopoversLine();
+        })
+
 
     var legend = svg_line.selectAll(".legend")
         .data(varNames.slice().reverse())
