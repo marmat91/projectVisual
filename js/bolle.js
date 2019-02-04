@@ -1,5 +1,9 @@
 let dettaglio_o_no=0
 function bolle (data, data2, data1, data3){
+    var color = d3.scaleOrdinal()
+        .domain(["general-gate", "entrance","ranger-stop", "gate","camping","ranger-bas"])
+        .range(["paleturquoise", "palegreen", "lemonchiffon","crimson","sandybrown","fuchsia"]);
+
     dettaglio_o_no=0
     d3.select("#bolle").selectAll("g").remove();
     var legend = d3.select("#graf").append("g")
@@ -46,20 +50,13 @@ function bolle (data, data2, data1, data3){
     var datiUpVei = cf.dimension(function(d) {return d.gatename;});
     var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
         datiUpGroup=datiUpV.all();
-    console.log (datiUpGroup);
+    console.log (datiUpGroup[0]);
 
-    //cambio i valori di check_ins con quelli aggiornati
-    datiUpGroup.forEach(function(element) {
-        for (i = 0; i < data.nodes.length; i++) {
-            if (data.nodes[i]["key"]==element.key){
-                data.nodes[i]["check_ins"]=element.value;
-            }
-        }
-    })
+    console.log(data)
     var nodeSizeRange = [15, 40];
     var valori =[];
-    (data.nodes).forEach(function(element) {
-        valori.push(element.check_ins);
+    (datiUpGroup).forEach(function(element) {
+        valori.push(element.value);
     })
     var minmax = d3.extent(valori);
     var nodeScale = d3.scaleLinear()
@@ -95,16 +92,13 @@ function bolle (data, data2, data1, data3){
     console.log (clusters)
     var k = 0
     var nodes = d3.range(n).map(function() {
-        for (ind=0; ind < colori_base.length; ind++){
-            if (colori_base[ind].value==data.nodes[k].color){
-                var cluster_app=colori_base[ind].key
-            }
-        }
+        var cluster_app=datiUpGroup[k].key.substr(0,datiUpGroup[k].key.length-1);
+        if (cluster_app=="ranger-bas"){cluster_app="ranger-base"}
         var i = cluster_app,
-            r = nodeScale(data.nodes[k].check_ins),
-            c=data.nodes[k].color,
-            cc=data.nodes[k].key,
-            n=data.nodes[k].check_ins;
+            r = nodeScale(datiUpGroup[k].value),
+            c=color(datiUpGroup[k].key.substr(0,datiUpGroup[k].key.length-1)), //RIVEDERE I COLORI ok
+            cc=datiUpGroup[k].key,
+            n=datiUpGroup[k].value;
         d = {cluster: i, radius: r, color:c, id_c:cc, n:n};
         if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
         k=k+1;
@@ -152,8 +146,6 @@ function bolle (data, data2, data1, data3){
         elemEnter
             .attr("transform","translate(190 ,170)")
             .attr("transform", function(d){return "translate("+d.x+","+d.y+")"})
-        //.attr("x", function(d) { return d.x; })
-        //.attr("y", function(d) { return d.y; })
     }
 
     function forceCluster(alpha) {
@@ -169,7 +161,6 @@ function bolle (data, data2, data1, data3){
     elemEnter.append("text")
         .style("font-size",function(d) { return d.radius*0.4 + "pt"; })
         .style("font-weight","bold")
-        //.attr("dx", function(d){return (-1*d.radius)+((d.id_c.length*-1)+15)})
         .attr("dx", function(d){return (-1*d.radius)+(((d.id_c.length-13)*-1.2)*(d.radius/20))})
         .text(function(d) { return d.id_c ;})
 
@@ -304,6 +295,7 @@ function creaSelettoreDateSpecB(data, data2, data1, data3) {
         .style("height","40px")
         .on('change',function(d) {
             giornoB=this.value;
+
             if (dettaglio_o_no==1){
                 bolle_dettaglio(data, data2, data1, gate_sel_bolle, data3)
             }
@@ -337,7 +329,9 @@ function showPopoverBolle (d) {
         trigger: 'manual',
         html : true,
         content: function() {
-            return d.id_c+"<br>"+d.n+" veicoli";
+            if (dettaglio_o_no==0) {return d.id_c+"<br>"+d.n+" veicoli";}
+            else if(d.cluster=="gate selezionato") {return d.id_c+"<br>"+d.n+" veicoli<br>Media giorni permanenza: "+(gate_sel_bolle_val/d.n);}
+            else{return d.id_c+"<br>"+d.n+" veicoli";}
         }
     });
     $(this).popover('show')

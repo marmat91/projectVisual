@@ -6,6 +6,9 @@ let colori_base = [
     {key:"camping", value:"sandybrown"},
     {key:"ranger-base", value:"fuchsia"}];
 function creaGrafo (selection, data2){
+    var color = d3.scaleOrdinal()
+        .domain(["Methylosmolene", "Chlorodinine", "AGOC-3A", "Appluimonia","Tutti"])
+        .range(["#66c2a5", "#fc8d62", "#8da0cb","#e78ac3","#b59ea5"]);
     var cf	=	crossfilter(data2);
     var datiUpVei = cf.dimension(function(d) {return d.gatename;});
     var datiUpV= datiUpVei.group().reduceSum(function(d) { return d.n; }),
@@ -93,7 +96,6 @@ function creaGrafo (selection, data2){
         .attr("fill", "yellow")
         .style("font-size","7pt")
         .text("Legenda (min, MAX)")
-
     var elem = svg.selectAll("g legend")
         .data(minmax)
     var elemEnter = elem.enter()
@@ -261,9 +263,7 @@ function updateGrafo (dati, data2){
             d3.select("#xyz")
                 .selectAll("line")
                 .attr('stroke-width', 0.0);
-            console.log(this); })
-        .append("title")
-        .text(function(d) { return  d.key + ", \nn° veicoli: " + d.check_ins  ; });
+            console.log(this); });
 
 }
 function removePopovers () {

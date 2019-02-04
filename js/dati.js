@@ -23,7 +23,7 @@ function me (){
     d3.json("data/graph.json", function(data) {
         d3.json("data/dati_mese.json", function(data1) {
             d3.json("data/dati_mese_giorno.json", function (data2){
-                d3.json("data/percorsi.json", function (data3) {
+                d3.json("data/percorsi_completo.json", function (data3) {
                     creaSelettoreVeicolo(data, data1, data2)
                     creaSelettoreDate(data, data1, data2)
                     creaSelettoreVeicoloB(data, data1, data2, data3)

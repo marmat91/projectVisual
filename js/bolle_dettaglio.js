@@ -2,10 +2,12 @@ let colori_base_bis = [
     {key:"gate entrante", value:"#2c7fb8"},
     {key:"gate selezionato",value:"#7fcdbb"},
     {key:"gate uscente",value:"#edf8b1"}];
-let gate_sel_bolle=""
+let gate_sel_bolle="";
+let gate_sel_bolle_val=0;
 function bolle_dettaglio (data, data2, data1, gate_sele, data3){
-    gate_sel_bolle=gate_sele
-    dettaglio_o_no=1
+    gate_sel_bolle_val=0;
+    gate_sel_bolle=gate_sele;
+    dettaglio_o_no=1;
     d3.select("#bolle").selectAll("g").remove();
 
     var legend = d3.select("#graf").append("g")
@@ -31,7 +33,7 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
         .text(function (d) { return d.key; });
 
     var width = 960,
-        height = 650
+        height = 650;
 
     var cf	=	crossfilter(data3);
     if (mese_annoB!='tutte'){
@@ -52,6 +54,19 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
     var datiUpV= datiUpVei.group().reduceCount(),
         datiUpGroup=datiUpV.all();
     console.log (datiUpGroup);
+
+    var datiUpVip= datiUpVeiVai.group().reduceSum(function(d) { return d.differenza; }),
+        datiUpGroupSum=datiUpVip.all();
+    console.log(datiUpGroupSum)
+    datiUpGroupSum.forEach(function(element) {
+        console.log(element.key)
+        if (element.key==gate_sele){
+            gate_sel_bolle_val=element.value;
+        }
+    })
+    console.log(gate_sel_bolle_val)
+
+
 
     var flusso=[]
     datiUpGroup.forEach(function(element) {
@@ -81,6 +96,7 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
     var datiUpV= datiUpVei.group().reduceCount(),
         datiUpGroup=datiUpV.all();
     console.log (datiUpGroup);
+
     var tot=0
     datiUpGroup.forEach(function(element) {
         if (element.value>0){
@@ -91,15 +107,7 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
     })
     flusso.push({nodo: gate_sele, valore:tot, colore: "#7fcdbb", cluster:"selezionato"});
 
-    console.log(flusso)
-    //cambio i valori di check_ins con quelli aggiornati
-    datiUpGroup.forEach(function(element) {
-        for (i = 0; i < data.nodes.length; i++) {
-            if (data.nodes[i]["key"]==element.key){
-                data.nodes[i]["check_ins"]=element.value;
-            }
-        }
-    })
+
     var nodeSizeRange = [20, 40];
     var valori =[];
 
@@ -190,15 +198,11 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
         .style("fill", function(d) {  return d.color;})
         .attr("opacity", 0.75)
 
-    //    TODO: Update for v4
-    //    .call(force.drag);
 
     function tick() {
         elemEnter
             .attr("transform","translate(190 ,170)")
             .attr("transform", function(d){return "translate("+d.x+","+d.y+")"})
-        //.attr("x", function(d) { return d.x; })
-        //.attr("y", function(d) { return d.y; })
     }
 
     function forceCluster(alpha) {
