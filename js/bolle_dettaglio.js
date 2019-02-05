@@ -4,6 +4,7 @@ let colori_base_bis = [
     {key:"gate uscente",value:"#edf8b1"}];
 let gate_sel_bolle="";
 let gate_sel_bolle_val=0;
+let massimo_veicolo="";
 function bolle_dettaglio (data, data2, data1, gate_sele, data3){
     gate_sel_bolle_val=0;
     gate_sel_bolle=gate_sele;
@@ -55,9 +56,11 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
         datiUpGroup=datiUpV.all();
     console.log (datiUpGroup);
 
+    //calcolo i giorni di permanenza totali nei gate
     var datiUpVip= datiUpVeiVai.group().reduceSum(function(d) { return d.differenza; }),
         datiUpGroupSum=datiUpVip.all();
     console.log(datiUpGroupSum)
+    //mi prendo solo quelli del gate che mi interessa
     datiUpGroupSum.forEach(function(element) {
         console.log(element.key)
         if (element.key==gate_sele){
@@ -66,6 +69,13 @@ function bolle_dettaglio (data, data2, data1, gate_sele, data3){
     })
     console.log(gate_sel_bolle_val)
 
+    //DA TESTARE (OK!!)
+    var top_car = cf.dimension(function(d) { return d.car_id; }),
+        car_vol = top_car.group().reduceSum(function(d) { return d.differenza; }),
+        topTypes = car_vol.top(1);
+    console.log(topTypes[0].key);
+    console.log(topTypes[0].value);
+    massimo_veicolo=(topTypes[0].key+": "+topTypes[0].value+" giorni");
 
 
     var flusso=[]

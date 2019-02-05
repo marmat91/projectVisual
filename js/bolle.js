@@ -321,7 +321,6 @@ function removePopoversBolle () {
     });
 }
 function showPopoverBolle (d) {
-    console.log(d)
     $(this).popover({
         title: d.cluster,
         placement: 'auto top',
@@ -330,7 +329,8 @@ function showPopoverBolle (d) {
         html : true,
         content: function() {
             if (dettaglio_o_no==0) {return d.id_c+"<br>"+d.n+" veicoli";}
-            else if(d.cluster=="gate selezionato") {return d.id_c+"<br>"+d.n+" veicoli<br>Media giorni permanenza: "+(gate_sel_bolle_val/d.n);}
+            else if(d.cluster=="gate selezionato") {return d.id_c+"<br>"+d.n+" veicoli<br>Media giorni permanenza: "
+                +(gate_sel_bolle_val/d.n)+"<br>"+massimo_veicolo;}
             else{return d.id_c+"<br>"+d.n+" veicoli";}
         }
     });

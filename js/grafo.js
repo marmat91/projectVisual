@@ -79,7 +79,7 @@ function creaGrafo (selection, data2){
         .attr("opacity", 0.75)
         .attr("fill", function(d) { return (d.color); });
 
-    // set scale for node size
+    // Range grandezza Nodi
     var nodeSizeRange = [1, 10];
     var valori =[];
     (selection.nodes).forEach(function(element) {
@@ -208,7 +208,6 @@ function updateGrafo (dati, data2){
         .attr("opacity", 0.75)
         .attr("fill", function(d) { return (d.color); });
 
-    // set scale for node size
     var nodeSizeRange = [1, 10];
     var valori =[];
     (dati.nodes).forEach(function(element) {
