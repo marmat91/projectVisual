@@ -183,7 +183,6 @@ function removePopoversLine () {
     });
 }
 function showPopoverLine (d) {
-    console.log(d)
     $(this).popover({
         title: d.name,
         placement: 'auto top',
