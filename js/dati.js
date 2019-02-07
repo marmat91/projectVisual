@@ -87,7 +87,7 @@ function creaSelettoreDate(data, data1, data2) {
     let toolbar2 = d3.select("#toolbar2");
     toolbar2.append("label")
         .attr("style", "font-size: 18pt")
-        .text("Seleziona la data:");
+        .text("Seleziona l'anno e il mese:");
 
     toolbar2.append("br");
 
