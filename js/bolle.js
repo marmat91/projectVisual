@@ -127,10 +127,10 @@ function bolle (data, data2, data1, data3){
         .attr('transform', 'translate(' + width / 3 + ',' + 280 + ')');
 
     var circle_all = svg2.selectAll("my circle")
-        .data(nodes)
+        .data(nodes);
 
     var elemEnter = circle_all.enter()
-        .append("g")
+        .append("g");
 
     var circle=elemEnter.append("circle")
         .attr("r", function(d) { return d.radius; })
@@ -139,7 +139,7 @@ function bolle (data, data2, data1, data3){
         .on("click", function(d) {
             var gate_sele=d.id_c;
             bolle_dettaglio(data, data2, data1, gate_sele, data3)
-        })
+        });
 
 
     function tick() {
@@ -162,7 +162,7 @@ function bolle (data, data2, data1, data3){
         .style("font-size",function(d) { return d.radius*0.4 + "pt"; })
         .style("font-weight","bold")
         .attr("dx", function(d){return (-1*d.radius)+(((d.id_c.length-13)*-1.2)*(d.radius/20))})
-        .text(function(d) { return d.id_c ;})
+        .text(function(d) { return d.id_c ;});
 
     circle
         .on("click", function(d) {
