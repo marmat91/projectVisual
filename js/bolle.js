@@ -112,7 +112,7 @@ function bolle (data, data2, data1, data3){
     var force = d3.forceSimulation()
         .nodes(nodes)
         .force("center", d3.forceCenter())
-        .force("collide", forceCollide)
+        .force("collide", forceCollide) //distanza tra un nodo e un altro
         .force("cluster", forceCluster)
         .force("gravity", d3.forceManyBody(30))
         .force("x", d3.forceX().strength(.7))
